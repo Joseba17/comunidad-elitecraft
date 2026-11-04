@@ -1,12 +1,22 @@
 name: Avisador de directos
 
+# Cómo se mantiene en marcha:
+# - Cada pasada lanzada a mano (o por la anterior) espera unos minutos y lanza la siguiente.
+#   Así no depende del horario de GitHub, que a veces no arranca o se retrasa mucho.
+# - El horario de abajo queda como respaldo: si un día la cadena se corta, lo retoma
+#   en cuanto GitHub lo ejecute (y entonces relanza la cadena).
+# - Solo puede haber una pasada en marcha y otra en espera, así que nunca se duplican.
+# - Para pararlo: Settings → Secrets and variables → Actions → Variables → crea CADENA = no.
+#   Para reanudarlo: borra esa variable y pulsa "Run workflow".
+
 on:
   schedule:
-    - cron: "2-59/5 * * * *"  # cada 5 minutos (en el 2, 7, 12…: fuera de las horas en punto, que van saturadas)
+    - cron: "2-59/5 * * * *"  # respaldo: cada 5 minutos (fuera de las horas en punto, que van saturadas)
   workflow_dispatch:         # botón "Run workflow" para lanzarlo a mano
 
 permissions:
   contents: write            # para guardar estado.json
+  actions: write             # para lanzar la siguiente pasada
 
 concurrency:
   group: avisador
@@ -15,7 +25,7 @@ concurrency:
 jobs:
   avisar:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
 
@@ -38,5 +48,14 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add estado.json
             git commit -m "Actualiza directos"
+            git pull --rebase --quiet
             git push
           fi
+
+      - name: Programar la siguiente pasada
+        if: always() && vars.CADENA != 'no'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 210
+          gh workflow run avisador.yml -R "$GITHUB_REPOSITORY" --ref main
