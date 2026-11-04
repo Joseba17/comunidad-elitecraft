@@ -1,5 +1,17 @@
 {
-  "directos": {},
-  "panel": "1567547815935082667",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí."
+  "directos": {
+    "tonacho": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/tonacho-profile_image-b9fc63658b3d1c5b-300x300.png",
+      "inicio": "2026-11-04T16:18:51Z",
+      "juego": "Minecraft",
+      "login": "tonacho",
+      "mensaje": "1567592304296861808",
+      "stream": "318198158306",
+      "titulo": "EL ARCHIVO PRESTONIANO - JARL"
+    }
+  },
+  "panel": "1567592309460312145",
+  "panel_huella": "En directo ahora · 1**[Tonacho](https://twitch.tv/tonacho)** · EL ARCHIVO PRESTONIANO - JARL · <t:1793809131:R>",
+  "todos": "2026-11-04T17:32:08Z"
 }
