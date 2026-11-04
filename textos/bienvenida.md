@@ -8,6 +8,7 @@
 🍿 **Comenta los directos** en {canal:comentando-directos}, o los de cada participante en su hilo de {canal:hilos-de-directos}.
 🎬 **Lo mejor de EliteCraft** en {canal:clips}, {canal:teorías-y-lore} y {canal:nostalgia}.
 💬 **Habla de lo que sea** en {canal:general}.
+-# Los canales de 📌 Inicio y {canal:en-directo} son para leer. En todos los demás puedes escribir.
 
 ## 🔗 Enlaces
 [Cuenta oficial de EliteCraft](https://x.com/EliteCraftSMP) · [Wiki de EliteCraft](https://elitecraft.fandom.com/es/wiki/EliteCraft)

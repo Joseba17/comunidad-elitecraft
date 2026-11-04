@@ -139,12 +139,12 @@ ESTRUCTURA = [
         ("anuncios", dict(tipo=ANUNCIOS, tema="Novedades de este servidor. Elige el rol Novedades del servidor para recibir avisos.")),
         ("noticias-elitecraft", dict(tipo=ANUNCIOS, escriben=["Moderador"],
             tema="Anuncios oficiales de EliteCraft: participantes, fechas y eventos.")),
-    ]),
-    ("EliteCraft", "publico", [
         ("guía", dict(tipo=TEXTO, acceso="lectura",
             tema="Lo que se sabe de EliteCraft 4: fechas, Días de Élite, pranks, medallas y novedades.")),
         ("participantes", dict(tipo=TEXTO, acceso="lectura",
             tema="Quién participa en EliteCraft 4, con su Twitch y su hilo. Se actualiza solo.")),
+    ]),
+    ("EliteCraft", "publico", [
         ("en-directo", dict(tipo=TEXTO, acceso="lectura",
             tema="Avisos automáticos cuando un participante empieza directo. Elige de quién en Canales y roles.")),
         ("comentando-directos", dict(tipo=TEXTO, lento=3,
@@ -616,6 +616,17 @@ class Montador:
                     except ErrorDiscord as e:
                         aviso(f"No he podido renombrar {c['name']} ({e}).")
                 return c["id"]
+        if padre is not None and tipo != CATEGORIA:
+            # ¿Está en otra categoría? Se mueve en vez de crear otro.
+            for c in self.existentes:
+                if nombre_base(c["name"]).lower() == nombre.lower() and c["type"] == tipo:
+                    try:
+                        self.api("PATCH", f"/channels/{c['id']}", {"parent_id": padre, "lock_permissions": False})
+                        print(f"   ~ {nombre_visible(nombre, tipo)} cambia de categoría")
+                        c["parent_id"] = padre
+                    except ErrorDiscord as e:
+                        aviso(f"No he podido mover {c['name']} ({e}).")
+                    return self.buscar(nombre, tipo, padre)
         return None
 
     def montar_canales(self, solo=None):
