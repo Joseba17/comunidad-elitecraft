@@ -147,17 +147,21 @@ ESTRUCTURA = [
             tema="Quién participa en EliteCraft 4, con su Twitch y su hilo. Se actualiza solo.")),
         ("en-directo", dict(tipo=TEXTO, acceso="lectura",
             tema="Avisos automáticos cuando un participante empieza directo. Elige de quién en Canales y roles.")),
+        ("comentando-directos", dict(tipo=TEXTO, lento=3,
+            tema="Para comentar los directos en general. Cada participante tiene además su hilo en #hilos-de-directos. Aquí sí hay spoilers.")),
         # Foro con un hilo fijo por participante (los crea el script). Los miembros
         # responden en los hilos pero no abren hilos nuevos, para que no se desordene.
-        ("comentando-directos", dict(tipo=FORO, acceso="respuestas", vista=LISTA, orden=POR_ACTIVIDAD, lento=3,
-            tema="Un hilo por participante para comentar sus directos, y uno general. Aquí sí hay spoilers.")),
+        # "antes": nombre que tenía, para renombrarlo en vez de crear otro.
+        ("hilos-de-directos", dict(tipo=FORO, acceso="respuestas", vista=LISTA, orden=POR_ACTIVIDAD, lento=3,
+            antes="comentando-directos",
+            tema="Un hilo por participante para comentar sus directos. Los de quien está en directo suben solos. Aquí sí hay spoilers.")),
         ("clips", dict(tipo=FORO, vista=GALERIA, orden=POR_FECHA, reaccion="🔥",
             tema="Un clip por publicación. En el título, quién sale y qué pasa. Añade el enlace al clip o al directo.",
             etiquetas=["T1", "T2", "T3", "T4", "Mítico", "Gracioso", "Épico", "PvP", "Prank", "Construcción"])),
-        ("teorías-y-lore", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD,
+        ("teorías-y-lore", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD, reaccion="👀",
             tema="Teorías, alianzas, conflictos y la historia del server. Un tema por publicación.",
             etiquetas=["Teoría", "Alianzas", "Conflictos", "Lore", "Pranks", "Pregunta", "T1", "T2", "T3", "T4"])),
-        ("nostalgia", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD,
+        ("nostalgia", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD, reaccion="❤️",
             tema="Momentos, construcciones y recuerdos de las temporadas anteriores.",
             etiquetas=["T1", "T2", "T3", "Momento mítico", "Construcción", "Recuerdo"])),
         ("predicciones", dict(tipo=TEXTO, lento=30, encuestas=True,
@@ -174,8 +178,8 @@ ESTRUCTURA = [
             tema="Busca con quién jugar. Di versión, modo o servidor y cuántos sois.")),
         ("tu-contenido", dict(tipo=TEXTO, lento=21600,
             tema="Comparte tu canal, tus vídeos o tu servidor. Un mensaje cada 6 horas.")),
-        ("sugerencias", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD,
-            tema="Ideas para mejorar el servidor. Una por publicación.",
+        ("sugerencias", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD, reaccion="👍",
+            tema="Ideas para mejorar el servidor. Una por publicación. Vota las que te gusten con 👍.",
             etiquetas=["Propuesta", "Error", "En estudio*", "Hecho*", "Descartado*"])),
     ]),
     ("Voz", "publico", [
@@ -198,7 +202,7 @@ ESTRUCTURA = [
 EMOJIS = {
     "Inicio": "📌", "EliteCraft": "⚔️", "Comunidad": "🌍", "Voz": "🔊", "Staff": "🔒",
     "bienvenida": "👋", "normas": "📜", "anuncios": "📢", "noticias-elitecraft": "📰",
-    "guía": "📖", "participantes": "👥", "en-directo": "🔴", "comentando-directos": "🍿", "clips": "🎬", "teorías-y-lore": "🧩",
+    "guía": "📖", "participantes": "👥", "en-directo": "🔴", "comentando-directos": "🍿", "hilos-de-directos": "🧵", "clips": "🎬", "teorías-y-lore": "🧩",
     "nostalgia": "🕰️", "predicciones": "🔮",
     "general": "💬", "memes": "😂", "fanart-y-ediciones": "🎨", "minecraft": "⛏️",
     "buscar-gente": "🤝", "tu-contenido": "🚀", "sugerencias": "💡",
@@ -616,6 +620,8 @@ class Montador:
 
     def montar_canales(self, solo=None):
         paso("Canales" if solo is None else "Canales necesarios para el modo Comunidad")
+        if solo is None:
+            self.renombrar_antiguos()
         for pos_cat, (cat_nombre, cat_acceso, canales) in enumerate(ESTRUCTURA):
             if solo is not None and not any(n in solo for n, _ in canales):
                 continue
@@ -643,6 +649,13 @@ class Montador:
                         self.api("PATCH", f"/channels/{cid}", {"topic": op["tema"]})
                         actual["topic"] = op["tema"]
                         print(f"   ~ tema de {nombre_visible(nombre, op['tipo'])} actualizado")
+                    # Foros: reacción por defecto
+                    if op["tipo"] == FORO and op.get("reaccion") and                             (actual.get("default_reaction_emoji") or {}).get("emoji_name") != op["reaccion"]:
+                        try:
+                            self.api("PATCH", f"/channels/{cid}", {"default_reaction_emoji": {"emoji_id": None, "emoji_name": op["reaccion"]}})
+                            print(f"   ~ reacción {op['reaccion']} en {nombre_visible(nombre, op['tipo'])}")
+                        except ErrorDiscord as e:
+                            aviso(f"No he podido poner la reacción en {nombre} ({e}).")
                     # Foros: añade las etiquetas nuevas del script sin tocar las que ya hay.
                     if op["tipo"] == FORO and "available_tags" in actual:
                         tienen = {t["name"] for t in actual["available_tags"]}
@@ -696,7 +709,8 @@ class Montador:
             if (nombre_base(c["name"]).lower() != nombre.lower() or c["type"] == tipo
                     or c["type"] == CATEGORIA or c.get("parent_id") != cat_id):
                 continue
-            mensajes = self.api("GET", f"/channels/{c['id']}/messages?limit=1") if c["type"] == TEXTO else []
+            # Un foro nunca se borra (tiene hilos); un canal de texto solo si está vacío.
+            mensajes = self.api("GET", f"/channels/{c['id']}/messages?limit=1") if c["type"] == TEXTO else [1]
             if mensajes:
                 self.api("PATCH", f"/channels/{c['id']}", {"name": f"{nombre}-antiguo"})
                 aviso(f"{c['name']} tenía mensajes: lo dejo como {nombre}-antiguo. Bórralo cuando no lo necesites.")
@@ -723,10 +737,24 @@ class Montador:
         except ErrorDiscord as e:
             aviso(f"No he podido ordenar los canales ({e}).")
 
-    # -- hilos de comentando-directos ---------------------------------------
+    def renombrar_antiguos(self):
+        """Canales que han cambiado de nombre en ESTRUCTURA (clave "antes"): se renombran
+        en vez de crear uno nuevo, y así conservan sus mensajes e hilos."""
+        for _, _, canales in ESTRUCTURA:
+            for nombre, op in canales:
+                if not op.get("antes"):
+                    continue
+                for c in self.existentes:
+                    if nombre_base(c["name"]).lower() == op["antes"].lower() and c["type"] == op["tipo"]:
+                        nuevo = nombre_visible(nombre, op["tipo"])
+                        self.api("PATCH", f"/channels/{c['id']}", {"name": nuevo})
+                        print(f"   ~ {c['name']} -> {nuevo}")
+                        c["name"] = nuevo
+
+    # -- hilos de hilos-de-directos -----------------------------------------
     def montar_hilos(self):
         paso("Hilos para comentar directos")
-        foro = self.canales.get("comentando-directos")
+        foro = self.canales.get("hilos-de-directos")
         self.hilos = {}
         if not foro:
             return
@@ -737,11 +765,13 @@ class Montador:
                  (archivados.get("threads", []) if isinstance(archivados, dict) else []):
             if t.get("parent_id") == foro:
                 existentes.setdefault(t["name"], t["id"])
+                # El antiguo hilo general ya no hace falta: ahora hay un canal de texto para eso.
+                if t["name"] == f"💬 {HILO_GENERAL}" and not t.get("message_count"):
+                    self.api("DELETE", f"/channels/{t['id']}")
+                    print(f"   ~ quito el hilo {t['name']} (ahora está {nombre_visible('comentando-directos', TEXTO)})")
 
         canales = leer_canales_twitch()
-        deseados = [(f"💬 {HILO_GENERAL}", HILO_GENERAL,
-                     "Para comentar EliteCraft en general, o cuando hay varios directos a la vez que se cruzan.")]
-        deseados += [(s, s, f"Comenta aquí los directos de **{s}**.\n🔴 <https://twitch.tv/{canales.get(s, s.lower())}>")
+        deseados = [(s, s, f"Comenta aquí los directos de **{s}**.\n🔴 <https://twitch.tv/{canales.get(s, s.lower())}>")
                      for s in sorted(self.streamers, key=str.casefold)]
         for titulo, clave, texto in deseados:
             if titulo in existentes:
@@ -753,11 +783,6 @@ class Montador:
                 "message": {"content": texto, "flags": 4, "allowed_mentions": {"parse": []}},
             })
             self.hilos[clave] = t["id"]
-            if clave == HILO_GENERAL:
-                try:
-                    self.api("PATCH", f"/channels/{t['id']}", {"flags": 2})  # fijado arriba del foro
-                except ErrorDiscord:
-                    pass
             hecho(titulo)
 
     # -- textos ------------------------------------------------------------

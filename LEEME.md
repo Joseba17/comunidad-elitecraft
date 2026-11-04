@@ -59,7 +59,7 @@ Para probar en local:
 ## Añadir participantes
 Cuando confirmen a alguien de EliteCraft 4, añádelo a `streamers.txt` (con su canal de Twitch si no se llama igual) y vuelve a ejecutar `montar_servidor.py`. Él solo:
 - crea su rol `Directo · Nombre` y lo pone en Canales y roles, en su grupo alfabético;
-- le abre su hilo en `🍿・comentando-directos`;
+- le abre su hilo en `🧵・hilos-de-directos`;
 - lo añade a la lista de `👥・participantes`;
 - lo **anuncia en `📰・noticias-elitecraft`**, mencionando a quien tiene el rol Noticias de EliteCraft. Si añades varios de golpe, salen en un solo anuncio;
 - actualiza `roles_discord.json`.
@@ -69,7 +69,7 @@ Después sube a GitHub `streamers.txt` y `roles_discord.json` para que el avisad
 Quitar a alguien de la lista no borra su rol ni su hilo: eso hazlo a mano.
 
 ## Comentar directos
-`🍿・comentando-directos` es un foro con un hilo fijo por participante y uno general (fijado arriba). Los miembros escriben en los hilos pero no pueden abrir hilos nuevos, así no se desordena. Como el foro se ordena por actividad, los hilos de quien está en directo suben solos. Cada aviso de `🔴・en-directo` enlaza al hilo de su participante.
+`🍿・comentando-directos` es un canal de texto normal para comentar los directos en general. Además, `🧵・hilos-de-directos` es un foro con un hilo fijo por participante: los miembros escriben en los hilos pero no pueden abrir hilos nuevos, así no se desordena. Como el foro se ordena por actividad, los hilos de quien está en directo suben solos. Cada aviso de `🔴・en-directo` enlaza al hilo de su participante.
 
 ## Eventos de Discord
 Para el estreno de la temporada o un evento que anuncien, crea un evento de Discord. Sale arriba del servidor con cuenta atrás, y quien pulse «Me interesa» recibe un aviso cuando empieza.

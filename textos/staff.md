@@ -25,7 +25,7 @@ Esas tres etiquetas solo las puede poner el staff.
 Cada publicación es un hilo con su propio chat. Se ordenan por actividad: lo que tiene mensajes nuevos sube solo.
 **Fijar una publicación:** ⋯ → **Fijar publicación**. Se queda arriba del todo.
 **Etiquetas:** sirven para filtrar. En {canal:clips}, si alguien no pone la temporada, se la puedes añadir tú.
-En {canal:comentando-directos} la gente no puede abrir publicaciones: los hilos los crea el bot, uno por participante.
+En {canal:hilos-de-directos} la gente no puede abrir publicaciones: los hilos los crea el bot, uno por participante.
 
 ## 📣 Noticias
 Los anuncios oficiales de @EliteCraftSMP van en {canal:noticias-elitecraft}. Después de publicar, pulsa **Publicar** para que llegue a los servidores que siguen el canal.

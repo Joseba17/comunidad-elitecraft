@@ -2,7 +2,7 @@
 > Son pocas, y el staff puede actuar ante cualquier cosa que estropee el ambiente aunque no esté escrita aquí.
 
 🤝 **Respeto.** A los miembros y a los participantes. Criticar una jugada está bien; insultar, acosar o llevar el drama a sus redes, no.
-🙈 **Cuidado con los spoilers.** Fuera de {canal:comentando-directos}, oculta lo reciente así: `||spoiler||`.
+🙈 **Cuidado con los spoilers.** Fuera de {canal:comentando-directos} y {canal:hilos-de-directos}, oculta lo reciente así: `||spoiler||`.
 🚀 **La autopromoción, solo en {canal:tu-contenido}.** Ni en otros canales ni por privado.
 🚫 **Nada de spam.** Ni mensajes repetidos, ni cadenas, ni menciones sin motivo.
 🔞 **Contenido apto para todos.** Tampoco en nombres, fotos de perfil o estados.

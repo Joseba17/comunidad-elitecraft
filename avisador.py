@@ -253,7 +253,7 @@ def pie(juego):
 
 def embed_directo(nombre, s, foto=None, hilo=None):
     # Arriba, la foto y el nombre del streamer; debajo, el título del directo (enlace)
-    # y, si existe, el hilo de #comentando-directos de ese participante.
+    # y, si existe, el hilo de #hilos-de-directos de ese participante.
     login = s["user_login"].lower()
     miniatura = s["thumbnail_url"].replace("{width}", "1280").replace("{height}", "720")
     embed = {
