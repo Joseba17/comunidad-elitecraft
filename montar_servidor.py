@@ -226,7 +226,7 @@ def nombre_base(nombre):
 
 
 # Textos fijos de la carpeta textos/
-TEXTOS = ["bienvenida", "normas", "guía"]
+TEXTOS = ["bienvenida", "normas", "guía", "staff"]
 
 # Canales que hacen falta antes de activar el modo Comunidad.
 PREVIOS = {"normas", "registros"}
