@@ -14,8 +14,9 @@
 # Organizador
 ElRichMC | elrichmc
 #
-# Confirmados a 4 de noviembre de 2026 (por orden alfabético)
+# Confirmados (por orden alfabético)
 Bobicraft | bobicraft
+CallaQueNoVeo | callaquenoveo
 Conterstine | conterstine
 EsVandal | esvandal
 Felipez360 | felipez360
