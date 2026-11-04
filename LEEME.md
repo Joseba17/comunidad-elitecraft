@@ -57,12 +57,36 @@ Para probar en local:
 - `python avisador.py` hace una pasada real.
 
 ## Añadir participantes
-Cuando confirmen a alguien de EliteCraft 4, añádelo a `streamers.txt` (con su canal de Twitch si no se llama igual) y vuelve a ejecutar `montar_servidor.py`. Se crea su rol, aparece en la pregunta de avisos de directo y se actualiza `roles_discord.json`. Después sube a GitHub los dos archivos, `streamers.txt` y `roles_discord.json`, para que el avisador empiece a vigilarlo.
+Cuando confirmen a alguien de EliteCraft 4, añádelo a `streamers.txt` (con su canal de Twitch si no se llama igual) y vuelve a ejecutar `montar_servidor.py`. Él solo:
+- crea su rol `Directo · Nombre` y lo pone en Canales y roles, en su grupo alfabético;
+- le abre su hilo en `🍿・comentando-directos`;
+- lo añade a la lista de `👥・participantes`;
+- lo **anuncia en `📰・noticias-elitecraft`**, mencionando a quien tiene el rol Noticias de EliteCraft. Si añades varios de golpe, salen en un solo anuncio;
+- actualiza `roles_discord.json`.
 
-Quitar a alguien de la lista no borra su rol: eso hazlo a mano.
+Después sube a GitHub `streamers.txt` y `roles_discord.json` para que el avisador empiece a vigilarlo.
+
+Quitar a alguien de la lista no borra su rol ni su hilo: eso hazlo a mano.
+
+## Comentar directos
+`🍿・comentando-directos` es un foro con un hilo fijo por participante y uno general (fijado arriba). Los miembros escriben en los hilos pero no pueden abrir hilos nuevos, así no se desordena. Como el foro se ordena por actividad, los hilos de quien está en directo suben solos. Cada aviso de `🔴・en-directo` enlaza al hilo de su participante.
+
+## Eventos de Discord
+Para el estreno de la temporada o un evento que anuncien, crea un evento de Discord. Sale arriba del servidor con cuenta atrás, y quien pulse «Me interesa» recibe un aviso cuando empieza.
+
+```bash
+python crear_evento.py "Estreno de EliteCraft 4" "2026-12-01 18:00" --avisar
+```
+
+La hora es la de España. Opciones: `--horas 2` (duración, por defecto 3), `--lugar "Twitch"`, `--descripcion "..."`, `--avisar` (lo anuncia también en `📰・noticias-elitecraft`) y `--semanal` (se repite cada semana, para los Días de Élite de los martes). También se puede crear a mano desde **Eventos**, arriba del todo en la lista de canales.
+
+## Noticias y tuits oficiales
+X cobra por leer tuits desde su API, así que no hay forma gratis y fiable de traerlos solos. Los anuncios oficiales se comparten a mano en `📰・noticias-elitecraft`: son pocos, y un moderador puede añadir contexto. Si quieres intentarlo en automático, el plan gratis de rss.app puede mandar los tuits de @EliteCraftSMP a ese canal por un webhook, aunque con retraso y con límites.
+
+Al publicar en `📰・noticias-elitecraft` (es un canal de anuncios), pulsa **Publicar** para que llegue también a los servidores que lo sigan.
 
 ## Cambiar los textos
-Los textos de bienvenida y normas están en `textos/` y se publican como tarjetas de color. La primera línea (`# ...`) es el título. Para cambiarlos, edita el archivo y vuelve a ejecutar el script: actualiza el mensaje que ya hay, sin borrarlo. Desde Discord no se pueden editar, porque los publica el bot.
+Los textos de bienvenida, normas y la guía de la temporada (`📖・guía`) están en `textos/`. Cuando salga información nueva (fecha de salida, eventos…), añádela a `textos/guía.md` y vuelve a ejecutar el script. Para cambiarlos, edita el archivo y vuelve a ejecutar el script: actualiza el mensaje que ya hay, sin borrarlo. Desde Discord no se pueden editar, porque los publica el bot. Los emojis de los canales están en `EMOJIS`, dentro de `montar_servidor.py`.
 
 ## Ojo al volver a ejecutarlo
 Las preguntas de entrada se vuelven a crear desde cero cada vez. Si las has retocado a mano en Discord, esos cambios se pierden.

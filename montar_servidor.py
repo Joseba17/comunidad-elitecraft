@@ -141,21 +141,27 @@ ESTRUCTURA = [
             tema="Anuncios oficiales de EliteCraft: participantes, fechas y eventos.")),
     ]),
     ("EliteCraft", "publico", [
+        ("guía", dict(tipo=TEXTO, acceso="lectura",
+            tema="Lo que se sabe de EliteCraft 4: fechas, Días de Élite, pranks, medallas y novedades.")),
+        ("participantes", dict(tipo=TEXTO, acceso="lectura",
+            tema="Quién participa en EliteCraft 4, con su Twitch y su hilo. Se actualiza solo.")),
         ("en-directo", dict(tipo=TEXTO, acceso="lectura",
             tema="Avisos automáticos cuando un participante empieza directo. Elige de quién en Canales y roles.")),
-        ("comentando-directos", dict(tipo=TEXTO, lento=3,
-            tema="Lo que está pasando ahora mismo en los directos. Aquí sí hay spoilers.")),
+        # Foro con un hilo fijo por participante (los crea el script). Los miembros
+        # responden en los hilos pero no abren hilos nuevos, para que no se desordene.
+        ("comentando-directos", dict(tipo=FORO, acceso="respuestas", vista=LISTA, orden=POR_ACTIVIDAD, lento=3,
+            tema="Un hilo por participante para comentar sus directos, y uno general. Aquí sí hay spoilers.")),
         ("clips", dict(tipo=FORO, vista=GALERIA, orden=POR_FECHA, reaccion="🔥",
             tema="Un clip por publicación. En el título, quién sale y qué pasa. Añade el enlace al clip o al directo.",
-            etiquetas=["T1", "T2", "T3", "T4", "Mítico", "Gracioso", "Épico", "PvP", "Construcción"])),
+            etiquetas=["T1", "T2", "T3", "T4", "Mítico", "Gracioso", "Épico", "PvP", "Prank", "Construcción"])),
         ("teorías-y-lore", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD,
             tema="Teorías, alianzas, conflictos y la historia del server. Un tema por publicación.",
-            etiquetas=["Teoría", "Alianzas", "Conflictos", "Lore", "Pregunta", "T1", "T2", "T3", "T4"])),
+            etiquetas=["Teoría", "Alianzas", "Conflictos", "Lore", "Pranks", "Pregunta", "T1", "T2", "T3", "T4"])),
         ("nostalgia", dict(tipo=FORO, vista=LISTA, orden=POR_ACTIVIDAD,
             tema="Momentos, construcciones y recuerdos de las temporadas anteriores.",
             etiquetas=["T1", "T2", "T3", "Momento mítico", "Construcción", "Recuerdo"])),
         ("predicciones", dict(tipo=TEXTO, lento=30, encuestas=True,
-            tema="Encuestas sobre lo que va a pasar: quién gana, quién traiciona, quién cae primero.")),
+            tema="Encuestas sobre lo que va a pasar: quién gana cada evento, alianzas, traiciones y dramas.")),
     ]),
     ("Comunidad", "publico", [
         ("general", dict(tipo=TEXTO, tema="Para hablar de lo que sea.")),
@@ -192,7 +198,7 @@ ESTRUCTURA = [
 EMOJIS = {
     "Inicio": "📌", "EliteCraft": "⚔️", "Comunidad": "🌍", "Voz": "🔊", "Staff": "🔒",
     "bienvenida": "👋", "normas": "📜", "anuncios": "📢", "noticias-elitecraft": "📰",
-    "en-directo": "🔴", "comentando-directos": "🍿", "clips": "🎬", "teorías-y-lore": "🧩",
+    "guía": "📖", "participantes": "👥", "en-directo": "🔴", "comentando-directos": "🍿", "clips": "🎬", "teorías-y-lore": "🧩",
     "nostalgia": "🕰️", "predicciones": "🔮",
     "general": "💬", "memes": "😂", "fanart-y-ediciones": "🎨", "minecraft": "⛏️",
     "buscar-gente": "🤝", "tu-contenido": "🚀", "sugerencias": "💡",
@@ -220,10 +226,15 @@ def nombre_base(nombre):
 
 
 # Textos fijos de la carpeta textos/
-TEXTOS = ["bienvenida", "normas"]
+TEXTOS = ["bienvenida", "normas", "guía"]
 
 # Canales que hacen falta antes de activar el modo Comunidad.
 PREVIOS = {"normas", "registros"}
+
+# Participantes
+ORGANIZADOR = "ElRichMC"
+PREFIJO_HILO = "Hilo · "           # clave en roles_discord.json del hilo de cada participante
+HILO_GENERAL = "General"           # hilo para comentar sin un participante concreto
 
 # ---------------------------------------------------------------------------
 # Preguntas al entrar (Onboarding)
@@ -246,8 +257,9 @@ PREGUNTAS = [
 # ---------------------------------------------------------------------------
 # Utilidades
 # ---------------------------------------------------------------------------
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
+for _flujo in (sys.stdout, sys.stderr):
+    if hasattr(_flujo, "reconfigure"):
+        _flujo.reconfigure(encoding="utf-8")
 
 
 def paso(texto):
@@ -279,19 +291,22 @@ def leer_token():
     return token
 
 
-def leer_streamers():
+def leer_canales_twitch():
+    """{nombre: canal_de_twitch} según streamers.txt ('Nombre' o 'Nombre | canal')."""
     archivo = CARPETA / "streamers.txt"
-    if not archivo.exists():
-        return []
-    nombres = []
-    for linea in archivo.read_text(encoding="utf-8").splitlines():
-        linea = linea.split("#", 1)[0].split("|", 1)[0].strip()
-        if linea and linea not in nombres:
-            nombres.append(linea)
-    if len(nombres) > 49:
-        aviso("Discord admite 50 opciones por pregunta: solo se usarán los primeros 49 streamers.")
-        nombres = nombres[:49]
-    return nombres
+    canales = {}
+    if archivo.exists():
+        for linea in archivo.read_text(encoding="utf-8").splitlines():
+            linea = linea.split("#", 1)[0].strip()
+            nombre, _, canal = linea.partition("|")
+            nombre = nombre.strip()
+            if nombre and nombre not in canales:
+                canales[nombre] = (canal.strip() or nombre).lower()
+    return canales
+
+
+def leer_streamers():
+    return list(leer_canales_twitch())
 
 
 def agrupar_por_letra(nombres, tam):
@@ -459,7 +474,11 @@ class Montador:
         self.montar_canales(solo=PREVIOS)
         self.activar_comunidad(info)
         self.montar_canales()
+        self.montar_hilos()
         self.publicar_textos()
+        self.publicar_participantes()
+        self.anunciar_nuevos()
+        self.guardar_ids()
         self.montar_automod()
         self.montar_onboarding()
         self.final()
@@ -470,6 +489,9 @@ class Montador:
         actuales = self.api("GET", f"/guilds/{self.g}/roles")
         por_nombre = {r["name"]: r for r in actuales}
         todos = list(ROLES) + [(PREFIJO_DIRECTO + s, 0, False, 0) for s in self.streamers]
+        # Si ya existía el servidor, los streamers con rol nuevo son participantes recién anunciados.
+        self.primera_vez = "Todos los directos" not in por_nombre
+        self.nuevos = []
         for nombre, color, separado, permisos in todos:
             if nombre in por_nombre:
                 self.roles[nombre] = por_nombre[nombre]["id"]
@@ -480,16 +502,11 @@ class Montador:
                 "permissions": str(permisos), "mentionable": False,
             })
             self.roles[nombre] = r["id"]
+            if nombre.startswith(PREFIJO_DIRECTO):
+                self.nuevos.append(nombre[len(PREFIJO_DIRECTO):])
             hecho(nombre)
 
         self.ordenar_roles([self.roles[n] for n, *_ in todos])
-
-        # El avisador de directos necesita saber qué rol mencionar por cada streamer.
-        avisos = {n: self.roles[n] for n, *_ in todos if n.startswith(PREFIJO_DIRECTO) or n == "Todos los directos"}
-        if not self.simulado:
-            (CARPETA / "roles_discord.json").write_text(
-                json.dumps(avisos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        hecho("roles_discord.json (para el avisador de directos)")
 
         # Permisos base de @everyone
         self.api("PATCH", f"/guilds/{self.g}/roles/{self.g}", {"permissions": str(PERMISOS_MIEMBRO)})
@@ -569,6 +586,11 @@ class Montador:
             lista.append({"id": todos, "type": 0, "allow": "0", "deny": str(ESCRIBIR)})
             escriben = extra.get("escriben", [])
             lista += [{"id": self.roles[n], "type": 0, "allow": str(ESCRIBIR), "deny": "0"} for n in escriben]
+        elif acceso == "respuestas":
+            # Foro: se puede responder en los hilos, pero solo el staff abre hilos nuevos.
+            lista.append({"id": todos, "type": 0, "allow": str(P["SEND_MESSAGES_IN_THREADS"]),
+                          "deny": str(perms("SEND_MESSAGES", "CREATE_PUBLIC_THREADS"))})
+            lista.append({"id": self.roles["Moderador"], "type": 0, "allow": str(P["SEND_MESSAGES"]), "deny": "0"})
         elif extra.get("encuestas"):
             lista.append({"id": todos, "type": 0, "allow": str(P["SEND_POLLS"]), "deny": "0"})
         if extra.get("tipo") == ESCENARIO:
@@ -614,11 +636,32 @@ class Montador:
                 cid = self.buscar(nombre, op["tipo"], cat_id)
                 if cid:
                     self.canales[nombre] = cid
+                    # Si has cambiado el tema en el script, se actualiza también en Discord.
+                    actual = next((c for c in self.existentes if c["id"] == cid), {})
+                    if (op.get("tema") and op["tipo"] in (TEXTO, ANUNCIOS, FORO)
+                            and actual.get("topic") is not None and actual.get("topic") != op["tema"]):
+                        self.api("PATCH", f"/channels/{cid}", {"topic": op["tema"]})
+                        actual["topic"] = op["tema"]
+                        print(f"   ~ tema de {nombre_visible(nombre, op['tipo'])} actualizado")
+                    # Foros: añade las etiquetas nuevas del script sin tocar las que ya hay.
+                    if op["tipo"] == FORO and "available_tags" in actual:
+                        tienen = {t["name"] for t in actual["available_tags"]}
+                        faltan = [t for t in op.get("etiquetas", []) if t.rstrip("*") not in tienen]
+                        if faltan:
+                            etiquetas = actual["available_tags"] + [
+                                {"name": t.rstrip("*"), "moderated": t.endswith("*")} for t in faltan]
+                            try:
+                                self.api("PATCH", f"/channels/{cid}", {"available_tags": etiquetas[:20]})
+                                print(f"   ~ etiquetas nuevas en {nombre_visible(nombre, op['tipo'])}: "
+                                      + ", ".join(t.rstrip("*") for t in faltan))
+                            except ErrorDiscord as e:
+                                aviso(f"No he podido añadir etiquetas a {nombre} ({e}).")
                     if acceso != "staff":
                         self.publicos.append(cid)
                     if solo is None:
                         igual(nombre_visible(nombre, op["tipo"]))
                     continue
+                self.retirar_tipo_antiguo(nombre, op["tipo"], cat_id)
                 cuerpo = {
                     "name": nombre_visible(nombre, op["tipo"]), "type": op["tipo"], "parent_id": cat_id, "position": pos,
                     "permission_overwrites": self.permisos_de(acceso, op),
@@ -626,7 +669,8 @@ class Montador:
                 if op.get("tema") and op["tipo"] in (TEXTO, ANUNCIOS, FORO):
                     cuerpo["topic"] = op["tema"]
                 if op.get("lento"):
-                    cuerpo["rate_limit_per_user"] = op["lento"]
+                    # En un foro, el modo lento que importa es el de dentro de los hilos.
+                    cuerpo["default_thread_rate_limit_per_user" if op["tipo"] == FORO else "rate_limit_per_user"] = op["lento"]
                 if op["tipo"] == FORO:
                     cuerpo["available_tags"] = [
                         {"name": t.rstrip("*"), "moderated": t.endswith("*")} for t in op.get("etiquetas", [])
@@ -641,6 +685,80 @@ class Montador:
                 if acceso != "staff":
                     self.publicos.append(c["id"])
                 hecho(cuerpo["name"])
+
+        if solo is None:
+            self.ordenar_canales()
+
+    def retirar_tipo_antiguo(self, nombre, tipo, cat_id):
+        """Si el canal existía con otro tipo (p. ej. texto y ahora es foro), Discord no deja
+        convertirlo: se borra si está vacío o se renombra a '-antiguo' si tiene mensajes."""
+        for c in list(self.existentes):
+            if (nombre_base(c["name"]).lower() != nombre.lower() or c["type"] == tipo
+                    or c["type"] == CATEGORIA or c.get("parent_id") != cat_id):
+                continue
+            mensajes = self.api("GET", f"/channels/{c['id']}/messages?limit=1") if c["type"] == TEXTO else []
+            if mensajes:
+                self.api("PATCH", f"/channels/{c['id']}", {"name": f"{nombre}-antiguo"})
+                aviso(f"{c['name']} tenía mensajes: lo dejo como {nombre}-antiguo. Bórralo cuando no lo necesites.")
+            else:
+                self.api("DELETE", f"/channels/{c['id']}")
+                print(f"   ~ {c['name']} pasa a ser de otro tipo: quito el antiguo (estaba vacío)")
+            self.existentes.remove(c)
+
+    def ordenar_canales(self):
+        """Deja categorías y canales en el orden de ESTRUCTURA (útil al añadir canales nuevos)."""
+        ids = {nombre_base(c["name"]).lower(): c["id"] for c in self.existentes if c["type"] == CATEGORIA}
+        posiciones, n = [], 0
+        for cat_nombre, _, canales in ESTRUCTURA:
+            cat_id = ids.get(cat_nombre.lower())
+            if cat_id:
+                posiciones.append({"id": cat_id, "position": n})
+            for nombre, _ in canales:
+                if nombre in self.canales:
+                    posiciones.append({"id": self.canales[nombre], "position": n})
+                    n += 1
+            n += 1
+        try:
+            self.api("PATCH", f"/guilds/{self.g}/channels", posiciones)
+        except ErrorDiscord as e:
+            aviso(f"No he podido ordenar los canales ({e}).")
+
+    # -- hilos de comentando-directos ---------------------------------------
+    def montar_hilos(self):
+        paso("Hilos para comentar directos")
+        foro = self.canales.get("comentando-directos")
+        self.hilos = {}
+        if not foro:
+            return
+        existentes = {}
+        activos = self.api("GET", f"/guilds/{self.g}/threads/active") or {}
+        archivados = self.api("GET", f"/channels/{foro}/threads/archived/public?limit=100") or {}
+        for t in (activos.get("threads", []) if isinstance(activos, dict) else []) + \
+                 (archivados.get("threads", []) if isinstance(archivados, dict) else []):
+            if t.get("parent_id") == foro:
+                existentes.setdefault(t["name"], t["id"])
+
+        canales = leer_canales_twitch()
+        deseados = [(f"💬 {HILO_GENERAL}", HILO_GENERAL,
+                     "Para comentar EliteCraft en general, o cuando hay varios directos a la vez que se cruzan.")]
+        deseados += [(s, s, f"Comenta aquí los directos de **{s}**.\n🔴 <https://twitch.tv/{canales.get(s, s.lower())}>")
+                     for s in sorted(self.streamers, key=str.casefold)]
+        for titulo, clave, texto in deseados:
+            if titulo in existentes:
+                self.hilos[clave] = existentes[titulo]
+                igual(titulo)
+                continue
+            t = self.api("POST", f"/channels/{foro}/threads", {
+                "name": titulo, "auto_archive_duration": 10080,
+                "message": {"content": texto, "flags": 4, "allowed_mentions": {"parse": []}},
+            })
+            self.hilos[clave] = t["id"]
+            if clave == HILO_GENERAL:
+                try:
+                    self.api("PATCH", f"/channels/{t['id']}", {"flags": 2})  # fijado arriba del foro
+                except ErrorDiscord:
+                    pass
+            hecho(titulo)
 
     # -- textos ------------------------------------------------------------
     def rellenar(self, texto):
@@ -659,35 +777,103 @@ class Montador:
         """Publica bienvenida y normas como mensaje normal. Si ya las publicó este bot,
         las actualiza en el sitio (sin borrar ni volver a publicar)."""
         paso("Textos de bienvenida y normas")
-        yo = self.api("GET", "/users/@me")["id"]
         for canal in TEXTOS:
             archivo = CARPETA / "textos" / f"{canal}.md"
-            cid = self.canales.get(canal)
-            if not archivo.exists() or not cid:
-                continue
-            texto = self.rellenar(archivo.read_text(encoding="utf-8").strip())
-            if len(texto) > 2000:
-                aviso(f"{archivo.name} pasa de 2000 caracteres (tiene {len(texto)}): acórtalo, Discord no lo admite.")
-                continue
-            mensajes = self.api("GET", f"/channels/{cid}/messages?limit=20") or []
-            mios = sorted((m for m in mensajes if m.get("author", {}).get("id") == yo), key=lambda m: int(m["id"]))
-            if not mios and mensajes:
-                igual(f"#{canal} tiene mensajes de otra persona, no lo toco")
-                continue
+            if archivo.exists():
+                self.publicar_fijo(canal, self.rellenar(archivo.read_text(encoding="utf-8").strip()))
+
+    def publicar_fijo(self, canal, texto):
+        """Mantiene en un canal un texto fijo del bot: lo publica, lo edita si ha cambiado
+        y lo reparte en varios mensajes si pasa del límite de Discord."""
+        cid = self.canales.get(canal)
+        if not cid:
+            return
+        if not hasattr(self, "yo"):
+            self.yo = self.api("GET", "/users/@me")["id"]
+        trozos, actual = [], ""
+        for linea in texto.split("\n"):
+            if actual and len(actual) + len(linea) + 1 > 1900:
+                trozos.append(actual.rstrip("\n"))
+                actual = ""
+            actual += linea + "\n"
+        if actual.strip():
+            trozos.append(actual.rstrip("\n"))
+
+        mensajes = self.api("GET", f"/channels/{cid}/messages?limit=50") or []
+        mios = sorted((m for m in mensajes if m.get("author", {}).get("id") == self.yo), key=lambda m: int(m["id"]))
+        if not mios and mensajes:
+            igual(f"#{canal} tiene mensajes de otra persona, no lo toco")
+            return
+        if len(mios) == len(trozos) and all(m.get("content") == t and not m.get("embeds") for m, t in zip(mios, trozos)):
+            igual(f"#{canal} sin cambios")
+            return
+        for i, trozo in enumerate(trozos):
             # flags 4 = sin vista previa de enlaces; menciones desactivadas para no avisar a nadie
-            cuerpo = {"content": texto, "embeds": [], "flags": 4, "allowed_mentions": {"parse": []}}
-            if not mios:
+            cuerpo = {"content": trozo, "embeds": [], "flags": 4, "allowed_mentions": {"parse": []}}
+            if i < len(mios):
+                self.api("PATCH", f"/channels/{cid}/messages/{mios[i]['id']}", cuerpo)
+            else:
                 self.api("POST", f"/channels/{cid}/messages", cuerpo)
-                hecho(f"#{canal}")
-                continue
-            primero = mios[0]
-            if primero.get("content") == texto and not primero.get("embeds") and len(mios) == 1:
-                igual(f"#{canal} sin cambios")
-                continue
-            self.api("PATCH", f"/channels/{cid}/messages/{primero['id']}", cuerpo)
-            for sobrante in mios[1:]:
-                self.api("DELETE", f"/channels/{cid}/messages/{sobrante['id']}")
-            hecho(f"#{canal} actualizado")
+        for sobrante in mios[len(trozos):]:
+            self.api("DELETE", f"/channels/{cid}/messages/{sobrante['id']}")
+        hecho(f"#{canal} {'actualizado' if mios else 'publicado'}")
+
+    # -- participantes -----------------------------------------------------
+    def linea_participante(self, nombre, canales):
+        partes = [f"**{nombre}**", f"[Twitch](<https://twitch.tv/{canales.get(nombre, nombre.lower())}>)"]
+        if nombre in self.hilos:
+            partes.append(f"<#{self.hilos[nombre]}>")
+        return " · ".join(partes)
+
+    def publicar_participantes(self):
+        paso("Lista de participantes")
+        canales = leer_canales_twitch()
+        confirmados = sorted((s for s in self.streamers if s != ORGANIZADOR), key=str.casefold)
+        lineas = ["# 👥 Participantes de EliteCraft 4",
+                  "-# Se actualiza sola cada vez que se confirma a alguien.", ""]
+        if ORGANIZADOR in self.streamers:
+            lineas += ["## Organiza", self.linea_participante(ORGANIZADOR, canales), ""]
+        lineas += [f"## Confirmados · {len(confirmados)}"] + [self.linea_participante(s, canales) for s in confirmados]
+        lineas += ["", "-# ¿Quieres avisos cuando entren en directo? Elige de quién en **Canales y roles**."]
+        self.publicar_fijo("participantes", "\n".join(lineas))
+
+    def anunciar_nuevos(self):
+        """Anuncia en #noticias-elitecraft a los participantes añadidos en esta ejecución."""
+        nuevos = [n for n in self.nuevos if n != ORGANIZADOR]
+        if self.primera_vez or not nuevos:
+            return
+        paso("Anuncio de participantes nuevos")
+        cid = self.canales.get("noticias-elitecraft")
+        rol = self.roles.get("Noticias de EliteCraft")
+        canales = leer_canales_twitch()
+        if len(nuevos) == 1:
+            titulo = f"## Nuevo participante: {nuevos[0]}"
+            frase = f"**{nuevos[0]}** se une a EliteCraft 4."
+        else:
+            lista = ", ".join(f"**{n}**" for n in nuevos[:-1]) + f" y **{nuevos[-1]}**"
+            titulo = "## Nuevos participantes confirmados"
+            frase = f"{lista} se unen a EliteCraft 4."
+        lineas = [f"<@&{rol}>" if rol else "", titulo, frase, ""]
+        lineas += [self.linea_participante(n, canales) for n in nuevos]
+        lineas += ["", "-# Para tener avisos de sus directos, actívalos en **Canales y roles**."]
+        m = self.api("POST", f"/channels/{cid}/messages", {
+            "content": "\n".join(l for l in lineas if l is not None).strip(), "flags": 4,
+            "allowed_mentions": {"parse": [], "roles": [rol] if rol else []},
+        })
+        try:  # que llegue también a los servidores que siguen este canal
+            self.api("POST", f"/channels/{cid}/messages/{m['id']}/crosspost")
+        except ErrorDiscord:
+            pass
+        hecho(f"Anunciado en #noticias-elitecraft: {', '.join(nuevos)}")
+
+    def guardar_ids(self):
+        """roles_discord.json: lo que necesita el avisador (roles a mencionar e hilos de cada participante)."""
+        ids = {n: i for n, i in self.roles.items() if n.startswith(PREFIJO_DIRECTO) or n == "Todos los directos"}
+        ids.update({PREFIJO_HILO + n: i for n, i in self.hilos.items()})
+        if not self.simulado:
+            (CARPETA / "roles_discord.json").write_text(
+                json.dumps(ids, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        hecho("roles_discord.json (para el avisador de directos)")
 
     # -- automod -----------------------------------------------------------
     def montar_automod(self):
@@ -735,6 +921,8 @@ class Montador:
             anteriores = previo.get("default_channel_ids", []) if isinstance(previo, dict) else []
         except ErrorDiscord:
             anteriores = []
+        vigentes = {c["id"] for c in self.existentes}
+        anteriores = [c for c in anteriores if c in vigentes]  # sin canales que ya no existen
         publicos = list(dict.fromkeys(self.publicos + anteriores))
 
         # Discord limita las opciones por pregunta. Al entrar solo se pregunta si

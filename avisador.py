@@ -33,13 +33,15 @@ from pathlib import Path
 CARPETA = Path(__file__).resolve().parent
 ESTADO = CARPETA / "estado.json"
 PREFIJO_DIRECTO = "Directo · "
+PREFIJO_HILO = "Hilo · "
 TODOS = "Todos los directos"
 MORADO, GRIS = 0x9146FF, 0x4E5058
 FALLOS_PARA_CERRAR = 2  # pasadas seguidas sin verle en directo antes de darlo por terminado
 HORAS_ENTRE_AVISOS_TODOS = 6  # "Todos los directos" recibe como mucho un aviso cada 6 horas
 
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
+for _flujo in (sys.stdout, sys.stderr):
+    if hasattr(_flujo, "reconfigure"):
+        _flujo.reconfigure(encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------
@@ -249,11 +251,12 @@ def pie(juego):
     return {"text": f"{juego} · Twitch" if juego else "Twitch"}
 
 
-def embed_directo(nombre, s, foto=None):
-    # Arriba, la foto y el nombre del streamer; debajo, el título del directo (enlace).
+def embed_directo(nombre, s, foto=None, hilo=None):
+    # Arriba, la foto y el nombre del streamer; debajo, el título del directo (enlace)
+    # y, si existe, el hilo de #comentando-directos de ese participante.
     login = s["user_login"].lower()
     miniatura = s["thumbnail_url"].replace("{width}", "1280").replace("{height}", "720")
-    return {
+    embed = {
         "author": autor(f"{nombre} está en directo", login, foto),
         "title": (s.get("title") or "Sin título")[:256],
         "url": f"https://twitch.tv/{login}",
@@ -262,6 +265,9 @@ def embed_directo(nombre, s, foto=None):
         "footer": pie(s.get("game_name")),
         "timestamp": s["started_at"],
     }
+    if hilo:
+        embed["description"] = f"🍿 Coméntalo en <#{hilo}>"
+    return embed
 
 
 def embed_terminado(nombre, guardado):
@@ -370,7 +376,7 @@ def pasada(twitch, webhook, filtro):
             guardado["fallos"] = 0
             if (s.get("title"), s.get("game_name")) != (guardado.get("titulo"), guardado.get("juego")):
                 guardado.update(titulo=s.get("title"), juego=s.get("game_name"))
-                webhook.editar(guardado["mensaje"], {"embeds": [embed_directo(nombre, s, guardado.get("foto"))]})
+                webhook.editar(guardado["mensaje"], {"embeds": [embed_directo(nombre, s, guardado.get("foto"), roles.get(PREFIJO_HILO + nombre))]})
                 print(f"   ~ {nombre}: título o juego actualizado")
             continue
         if not pasa_filtro(s, filtro):
@@ -382,7 +388,7 @@ def pasada(twitch, webhook, filtro):
             estado["todos"] = ahora_iso()
         ids = [roles[n] for n in quienes if n in roles]
         mensaje = webhook.enviar({
-            "content": " ".join(f"<@&{i}>" for i in ids), "embeds": [embed_directo(nombre, s, fotos.get(login))],
+            "content": " ".join(f"<@&{i}>" for i in ids), "embeds": [embed_directo(nombre, s, fotos.get(login), roles.get(PREFIJO_HILO + nombre))],
             "allowed_mentions": {"parse": [], "roles": ids},
         })
         vivos[login] = {
