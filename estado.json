@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1567592309460312145",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
+  "directos": {
+    "callaquenoveo": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d2e74cb-11f6-487e-8a6f-36938f330a46-profile_image-300x300.png",
+      "inicio": "2026-11-04T19:57:31Z",
+      "juego": "Just Chatting",
+      "login": "callaquenoveo",
+      "mensaje": "1567629753685639230",
+      "stream": "316192677458",
+      "titulo": "EliteCraft4 y WoW Forever || !sorteo !ig"
+    }
+  },
+  "panel": "1567629763588128829",
+  "panel_huella": "En directo ahora · 1**[CallaQueNoVeo](https://twitch.tv/callaquenoveo)** · EliteCraft4 y WoW Forever || !sorteo !ig · <t:1793822251:R>",
   "todos": "2026-11-04T17:32:08Z"
 }
