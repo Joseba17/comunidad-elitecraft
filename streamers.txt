@@ -1,0 +1,28 @@
+# Participantes de EliteCraft 4: uno por línea.
+#
+# Formato:  Nombre | canal_de_twitch
+# Si el canal de Twitch se llama igual que el nombre, basta con el nombre.
+# El canal es lo que va detrás de twitch.tv/ en su enlace.
+#
+# Cada uno tendrá su rol "Directo · Nombre", aparecerá en la pregunta
+# "¿De quién quieres avisos de directo?" (en este orden) y el avisador
+# vigilará su canal.
+#
+# Cuando anuncien a alguien nuevo, añádelo aquí y vuelve a ejecutar
+# montar_servidor.py: solo crea lo que falta.
+#
+# Organizador
+ElRichMC | elrichmc
+#
+# Confirmados a 4 de noviembre de 2026 (por orden alfabético)
+Bobicraft | bobicraft
+Conterstine | conterstine
+EsVandal | esvandal
+Felipez360 | felipez360
+Kaumaru | kaumaru_
+KillerCreeper55 | killercreeper55_
+MenosTrece | menostrece
+MerySoldier | mery_soldier
+Suwie | suwie
+Tonacho | tonacho
+Zeling | zeling
