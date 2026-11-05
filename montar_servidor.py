@@ -236,7 +236,12 @@ TEXTOS = ["bienvenida", "normas", "guía", "staff"]
 PREVIOS = {"normas", "registros"}
 
 # Participantes
-ORGANIZADOR = "ElRichMC"
+# Organización: salen aparte en #participantes y no se anuncian como participantes nuevos.
+# Si alguien de aquí también hace directos, ponlo además en streamers.txt.
+ORGANIZACION = {
+    "ElRichMC": "organiza y juega",
+    "Radixan": "administra y cuida el servidor (en principio no juega)",
+}
 PREFIJO_HILO = "Hilo · "           # clave en roles_discord.json del hilo de cada participante
 HILO_GENERAL = "General"           # hilo para comentar sin un participante concreto
 
@@ -864,18 +869,22 @@ class Montador:
     def publicar_participantes(self):
         paso("Lista de participantes")
         canales = leer_canales_twitch()
-        confirmados = sorted((s for s in self.streamers if s != ORGANIZADOR), key=str.casefold)
+        confirmados = sorted((s for s in self.streamers if s not in ORGANIZACION), key=str.casefold)
         lineas = ["# 👥 Participantes de EliteCraft 4",
-                  "-# Se actualiza sola cada vez que se confirma a alguien.", ""]
-        if ORGANIZADOR in self.streamers:
-            lineas += ["## Organiza", self.linea_participante(ORGANIZADOR, canales), ""]
+                  "-# Se actualiza sola cada vez que se confirma a alguien.", "", "## Organización"]
+        for nombre, papel in ORGANIZACION.items():
+            if nombre in self.streamers:
+                lineas.append(f"{self.linea_participante(nombre, canales)} · {papel}")
+            else:
+                lineas.append(f"**{nombre}** · {papel}")
+        lineas.append("")
         lineas += [f"## Confirmados · {len(confirmados)}"] + [self.linea_participante(s, canales) for s in confirmados]
         lineas += ["", "-# ¿Quieres avisos cuando entren en directo? Elige de quién en **Canales y roles**."]
         self.publicar_fijo("participantes", "\n".join(lineas))
 
     def anunciar_nuevos(self):
         """Anuncia en #noticias-elitecraft a los participantes añadidos en esta ejecución."""
-        nuevos = [n for n in self.nuevos if n != ORGANIZADOR]
+        nuevos = [n for n in self.nuevos if n not in ORGANIZACION]
         if self.primera_vez or not nuevos:
             return
         paso("Anuncio de participantes nuevos")

@@ -4,6 +4,9 @@
 ## 🗓️ Fecha de salida
 Todavía sin anunciar. En cuanto se sepa, saldrá aquí y en {canal:noticias-elitecraft}.
 
+## 🛠️ Administración
+**ElRichMC** organiza. **Radixan** se une como administrador para cuidar el servidor: en principio no juega, será el único en creativo y puede que se le vea por el spawn.
+
 ## 🌍 El mundo
 La semilla se ha elegido entre millones de opciones. El spawn es llano y amplio, con montañas en el horizonte, y no muy lejos hay una **isla de champiñones gigantesca**.
 
