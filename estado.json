@@ -1,5 +1,15 @@
 {
   "directos": {
+    "kakytronco": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/d0e9e315-bcf2-4786-953c-3f9283daa891-profile_image-300x300.png",
+      "inicio": "2026-11-05T21:16:11Z",
+      "juego": "Minecraft",
+      "login": "kakytronco",
+      "mensaje": "1568011188313399379",
+      "stream": "318210333282",
+      "titulo": "La cabra vuelve a ELITECRAFT. El resurgir del fenix"
+    },
     "killercreeper55_": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/b6ef4b7d-2ac7-4f79-af59-2389a822767d-profile_image-300x300.png",
@@ -11,7 +21,7 @@
       "titulo": "Hola que tal ? Gastando el pico!"
     }
   },
-  "panel": "1568000801010360392",
-  "panel_huella": "En directo ahora · 1**[KillerCreeper55](https://twitch.tv/killercreeper55_)** · Hola que tal ? Gastando el pico! · <t:1793910836:R>",
+  "panel": "1568011196206948396",
+  "panel_huella": "En directo ahora · 2**[KillerCreeper55](https://twitch.tv/killercreeper55_)** · Hola que tal ? Gastando el pico! · <t:1793910836:R>\n**[Kakytron](https://twitch.tv/kakytronco)** · La cabra vuelve a ELITECRAFT. El resurgir del fenix · <t:1793913371:R>",
   "todos": "2026-11-05T20:35:21Z"
 }
