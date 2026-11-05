@@ -57,5 +57,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          sleep 210
-          gh workflow run avisador.yml -R "$GITHUB_REPOSITORY" --ref main
+          sleep 180
+          # GitHub a veces falla un momento (error 500): se reintenta antes de rendirse,
+          # porque si esto falla la cadena se corta.
+          for intento in 1 2 3 4 5 6; do
+            if gh workflow run avisador.yml -R "$GITHUB_REPOSITORY" --ref main; then
+              exit 0
+            fi
+            echo "Intento $intento fallido, reintento en $((intento * 15)) s"
+            sleep $((intento * 15))
+          done
+          exit 1
