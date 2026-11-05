@@ -1,5 +1,15 @@
 {
   "directos": {
+    "elrichmc": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/f8bb9c67-375d-478f-8853-ae669e8563b6-profile_image-300x300.jpeg",
+      "inicio": "2026-11-05T22:15:33Z",
+      "juego": "Special Events",
+      "login": "elrichmc",
+      "mensaje": "1568026470042042475",
+      "stream": "318210825314",
+      "titulo": "¡ESTÁ OCURRIENDO! - MÁS NOVEDADES DE ELITECRAFT 4"
+    },
     "kakytronco": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/d0e9e315-bcf2-4786-953c-3f9283daa891-profile_image-300x300.png",
@@ -21,7 +31,7 @@
       "titulo": "Hola que tal ? Gastando el pico!"
     }
   },
-  "panel": "1568011196206948396",
-  "panel_huella": "En directo ahora · 2**[KillerCreeper55](https://twitch.tv/killercreeper55_)** · Hola que tal ? Gastando el pico! · <t:1793910836:R>\n**[Kakytron](https://twitch.tv/kakytronco)** · La cabra vuelve a ELITECRAFT. El resurgir del fenix · <t:1793913371:R>",
+  "panel": "1568026473179254825",
+  "panel_huella": "En directo ahora · 3**[KillerCreeper55](https://twitch.tv/killercreeper55_)** · Hola que tal ? Gastando el pico! · <t:1793910836:R>\n**[Kakytron](https://twitch.tv/kakytronco)** · La cabra vuelve a ELITECRAFT. El resurgir del fenix · <t:1793913371:R>\n**[ElRichMC](https://twitch.tv/elrichmc)** · ¡ESTÁ OCURRIENDO! - MÁS NOVEDADES DE ELITECRAFT 4 · <t:1793916933:R>",
   "todos": "2026-11-05T20:35:21Z"
 }
