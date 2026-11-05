@@ -4,6 +4,9 @@
 ## 🗓️ Fecha de salida
 Todavía sin anunciar. En cuanto se sepa, saldrá aquí y en {canal:noticias-elitecraft}.
 
+## 🌍 El mundo
+La semilla se ha elegido entre millones de opciones. El spawn es llano y amplio, con montañas en el horizonte, y no muy lejos hay una **isla de champiñones gigantesca**.
+
 ## ⚔️ Días de Élite
 Todos los **martes a las 18:00** (hora de España) hay un día dedicado a EliteCraft, pensado para juntar al máximo de miembros.
 🇲🇽 11:00 · 🇨🇴 12:00 · 🇵🇪 12:00 · 🇨🇱 14:00 · 🇦🇷 14:00
