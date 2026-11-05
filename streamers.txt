@@ -15,6 +15,7 @@
 ElRichMC | elrichmc
 #
 # Confirmados (por orden alfabético)
+ALKAPONE | alkapone
 Bobicraft | bobicraft
 CallaQueNoVeo | callaquenoveo
 Conterstine | conterstine
