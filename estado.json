@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1569043154680938618",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
-  "todos": "2026-11-08T17:37:18Z"
+  "directos": {
+    "elrichmc": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/f8bb9c67-375d-478f-8853-ae669e8563b6-profile_image-300x300.jpeg",
+      "inicio": "2026-11-09T17:45:47Z",
+      "juego": "Special Events",
+      "login": "elrichmc",
+      "mensaje": "1569407758468390933",
+      "stream": "318287411555",
+      "titulo": "ESTÁ OCURRIENDO - ELITECRAFT 4 EN 4 DÍAS :D"
+    }
+  },
+  "panel": "1569407765708017847",
+  "panel_huella": "En directo ahora · 1**[ElRichMC](https://twitch.tv/elrichmc)** · ESTÁ OCURRIENDO - ELITECRAFT 4 EN 4 DÍAS :D · <t:1794246347:R>",
+  "todos": "2026-11-09T17:46:07Z"
 }
