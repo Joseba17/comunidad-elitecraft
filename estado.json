@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1569407765708017847",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
-  "todos": "2026-11-09T17:46:07Z"
+  "directos": {
+    "skain": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/e4c31d46-9ee9-4ac6-82af-3b47befb1693-profile_image-300x300.png",
+      "inicio": "2026-11-10T11:02:23Z",
+      "juego": "Just Chatting",
+      "login": "skain",
+      "mensaje": "1569668968979890207",
+      "stream": "318293964771",
+      "titulo": "[313/365] 🔴FELIZ MARTES🔴CHARLA Y REACCIONES🔴VEN VEN VEN🔴SHORT STREAM🔴2 DIAS PARA ELITECRAFT🔴"
+    }
+  },
+  "panel": "1569668982888210433",
+  "panel_huella": "En directo ahora · 1**[Skain](https://twitch.tv/skain)** · [313/365] 🔴FELIZ MARTES🔴CHARLA Y REACCIONES🔴VEN VEN VEN🔴S… · <t:1794308543:R>",
+  "todos": "2026-11-10T11:04:05Z"
 }
