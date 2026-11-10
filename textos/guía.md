@@ -35,8 +35,11 @@ Cada miembro elige su nivel. Nadie puede hacer pranks de un nivel superior al su
 ## 🏅 Medallas y encargos
 Sistema de medallas renovado, con medallas únicas. Algunas saldrán en eventos sorpresa que solo conoce la administración.
 Los miembros podrán pedir grandes encargos al resto. Quien cumpla uno se lleva la medalla **Filantropía**.
+Las pranks aprobadas por la administración hacen subir de nivel el emblema de cada jugador.
 
 ## 🧰 Más novedades
+**Vídeos:** los miembros se comprometen a subir vídeos de EliteCraft 4 a YouTube con regularidad, y se les anima a compartir todo el contenido que puedan en redes.
+**Noches y encuentros:** será muy fácil pasar las noches y encontrarse con otros por el mundo.
 **Perfiles de usuario:** cumpleaños, posición, coordenadas de la base y el portal, recordatorios… y se pueden consultar los de otros con un comando.
 **Chat con avatares:** se ve la cara de quien escribe, y quien está en directo lleva un piloto violeta junto a su nombre.
 **Sin chat de voz:** sigue siendo vanilla, sin modificaciones.
