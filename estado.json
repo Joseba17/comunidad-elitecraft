@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1569769886195126353",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
+  "directos": {
+    "silithur": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/c17b93f8-a37b-4f40-98c0-aac841c1e414-profile_image-300x300.png",
+      "inicio": "2026-11-10T19:20:04Z",
+      "juego": "World of Warcraft",
+      "login": "silithur",
+      "mensaje": "1569837127254941758",
+      "stream": "316237541843",
+      "titulo": "WOW FOREVER - EL QUE SABE - PRIEST PARA EL 40 - ¿Y ELITECRAFT?"
+    }
+  },
+  "panel": "1569837130027376721",
+  "panel_huella": "En directo ahora · 1**[Silithur](https://twitch.tv/silithur)** · WOW FOREVER - EL QUE SABE - PRIEST PARA EL 40 - ¿Y ELITEC… · <t:1794338404:R>",
   "todos": "2026-11-10T17:45:04Z"
 }
