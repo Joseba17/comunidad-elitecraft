@@ -5,6 +5,9 @@
 **Jueves 12 de noviembre a las 17:30** (hora de España) · <t:1794501000:R>
 🇲🇽 10:30 · 🇵🇪 11:30 · 🇨🇴 11:30 · 🇨🇱 13:30 · 🇦🇷 13:30
 
+## 👥 Récord de miembros
+Más de **44 miembros**, la edición más grande de EliteCraft: supera los 44 de la T2 (la T1 tuvo 31 y la T3, 39). La lista, en {canal:participantes}.
+
 ## 🛠️ Administración
 **ElRichMC** organiza. **Radixan** se une como administrador para cuidar el servidor: en principio no juega, será el único en creativo y puede que se le vea por el spawn.
 
@@ -13,6 +16,9 @@ La semilla se ha elegido entre millones de opciones. El spawn es llano y amplio,
 
 ## 📚 Historia
 La serie girará en torno a **tres arcos narrativos**, y además cada miembro tendrá libertad para crear sus propias tramas con los demás. Las teorías, en {canal:teorías-y-lore}.
+
+## 🎪 Eventos de Élite
+Grandes eventos organizados por los propios miembros. Será la edición con más: **más de 44**, y algunos jugadores harán más de uno.
 
 ## ⚔️ Días de Élite
 Todos los **martes a las 18:00** (hora de España) hay un día dedicado a EliteCraft, pensado para juntar al máximo de miembros.
