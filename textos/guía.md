@@ -2,7 +2,8 @@
 > Todo lo que se sabe de la temporada, sacado de los anuncios oficiales. Se irá actualizando.
 
 ## 🗓️ Fecha de salida
-Todavía sin anunciar. En cuanto se sepa, saldrá aquí y en {canal:noticias-elitecraft}.
+**Jueves 12 de noviembre a las 17:30** (hora de España) · <t:1794501000:R>
+🇲🇽 10:30 · 🇵🇪 11:30 · 🇨🇴 11:30 · 🇨🇱 13:30 · 🇦🇷 13:30
 
 ## 🛠️ Administración
 **ElRichMC** organiza. **Radixan** se une como administrador para cuidar el servidor: en principio no juega, será el único en creativo y puede que se le vea por el spawn.
@@ -18,10 +19,11 @@ Todos los **martes a las 18:00** (hora de España) hay un día dedicado a EliteC
 🇲🇽 11:00 · 🇨🇴 12:00 · 🇵🇪 12:00 · 🇨🇱 14:00 · 🇦🇷 14:00
 
 ## 🧭 Cronología del primer mes
-**Día 1:** inauguración del servidor.
-**Día 5:** se pueden regalar e intercambiar objetos.
-**Día 20:** pelea contra la dragona.
-**Día 30:** abre la economía de EliteCraft 4.
+**Día 1 (jue 12 nov):** inauguración del servidor.
+**Día 5 (lun 16 nov):** se pueden regalar e intercambiar objetos.
+**Día 20 (mar 1 dic):** pelea contra la dragona. Cae en Día de Élite.
+**Día 30 (vie 11 dic):** abre la economía de EliteCraft 4.
+-# Fechas calculadas contando desde el 12 de noviembre.
 
 ## 🃏 Niveles de pranks
 Cada miembro elige su nivel. Nadie puede hacer pranks de un nivel superior al suyo o al de su víctima, y la víctima puede pedir que se retire.
