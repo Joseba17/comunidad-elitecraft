@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1570069511351042109",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
-  "todos": "2026-11-11T11:06:31Z"
+  "directos": {
+    "sramilcar": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
+      "inicio": "2026-11-12T05:42:43Z",
+      "juego": "Just Chatting",
+      "login": "sramilcar",
+      "mensaje": "1570313312829309070",
+      "stream": "319503756917",
+      "titulo": "ELITECRAFT 4 HOY EXTENSIBLE DIA 2"
+    }
+  },
+  "panel": "1570313337877696564",
+  "panel_huella": "En directo ahora · 1**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4 HOY EXTENSIBLE DIA 2 · <t:1794462163:R>",
+  "todos": "2026-11-12T05:44:28Z"
 }
