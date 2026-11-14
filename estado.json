@@ -1,5 +1,15 @@
 {
   "directos": {
+    "skain": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/e4c31d46-9ee9-4ac6-82af-3b47befb1693-profile_image-300x300.png",
+      "inicio": "2026-11-14T11:01:31Z",
+      "juego": "Just Chatting",
+      "login": "skain",
+      "mensaje": "1571118441178333184",
+      "stream": "318339212899",
+      "titulo": "[318/365]🔴ELITECRAFT 4🔴DÍA 2🔴CONSTRUYENDO LA BASE Y BUSCANDO RECURSOS🔴NIVEL PRINCIPIANTE🔴SOY MALO🔴"
+    },
     "sramilcar": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
@@ -11,7 +21,7 @@
       "titulo": "ELITECRAFT 4/ EXTENSIBLE DIA 3"
     }
   },
-  "panel": "1571036955024826429",
-  "panel_huella": "En directo ahora · 1**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 3 · <t:1794604298:R>",
+  "panel": "1571118444974182493",
+  "panel_huella": "En directo ahora · 2**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 3 · <t:1794604298:R>\n**[Skain](https://twitch.tv/skain)** · [318/365]🔴ELITECRAFT 4🔴DÍA 2🔴CONSTRUYENDO LA BASE Y BUSCA… · <t:1794654091:R>",
   "todos": "2026-11-14T05:39:56Z"
 }
