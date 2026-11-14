@@ -1,15 +1,5 @@
 {
   "directos": {
-    "conterstine": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/9d8514ff-ddc6-4cf6-af00-a576f8fabb0a-profile_image-300x300.png",
-      "inicio": "2026-11-14T05:39:32Z",
-      "juego": "Minecraft",
-      "login": "conterstine",
-      "mensaje": "1571036947332206623",
-      "stream": "318615678040",
-      "titulo": "HOY NUESTRA PRIMERA Y HUMILDE GRANJA EN ELITE"
-    },
     "sramilcar": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
@@ -32,6 +22,6 @@
     }
   },
   "panel": "1571036955024826429",
-  "panel_huella": "En directo ahora · 3**[Vickypalami](https://twitch.tv/vickypalami)** · ELITECRAFT 4 DIA 2 AHORA SI A CONSTRUIR MI CASA Y MAS TAR… · <t:1794591760:R>\n**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 3 · <t:1794604298:R>\n**[Conterstine](https://twitch.tv/conterstine)** · HOY NUESTRA PRIMERA Y HUMILDE GRANJA EN ELITE · <t:1794634772:R>",
+  "panel_huella": "En directo ahora · 2**[Vickypalami](https://twitch.tv/vickypalami)** · ELITECRAFT 4 DIA 2 AHORA SI A CONSTRUIR MI CASA Y MAS TAR… · <t:1794591760:R>\n**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 3 · <t:1794604298:R>",
   "todos": "2026-11-14T05:39:56Z"
 }
