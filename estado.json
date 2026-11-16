@@ -1,15 +1,5 @@
 {
   "directos": {
-    "conterstine": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/9d8514ff-ddc6-4cf6-af00-a576f8fabb0a-profile_image-300x300.png",
-      "inicio": "2026-11-15T18:09:41Z",
-      "juego": "Minecraft",
-      "login": "conterstine",
-      "mensaje": "1571590021226696795",
-      "stream": "319920800343",
-      "titulo": "HACEMOS LA GRANJA DE HIERRO CON RUSBI Y MUCHOS BEACONS"
-    },
     "esvandal": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/0fe9209d-9b32-4465-b735-4443764827e4-profile_image-300x300.png",
@@ -21,7 +11,7 @@
       "titulo": "🛑Elitecraft 4 - Día 3 - Haciendo un agujero en el mismísimo centro de elitecraft para acabar con los wardens"
     },
     "mery_soldier": {
-      "fallos": 0,
+      "fallos": 1,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/adf875df-d256-4170-941c-d426c3b4e29f-profile_image-300x300.png",
       "inicio": "2026-11-15T18:32:25Z",
       "juego": "League of Legends",
@@ -52,6 +42,6 @@
     }
   },
   "panel": "1571637492921139204",
-  "panel_huella": "En directo ahora · 5**[Conterstine](https://twitch.tv/conterstine)** · HACEMOS LA GRANJA DE HIERRO CON RUSBI Y MUCHOS BEACONS · <t:1794766181:R>\n**[MerySoldier](https://twitch.tv/mery_soldier)** · ELITECRAFT 4 DÍA 4 !video -NO TENGO TETAS PERO SOY MAJA · <t:1794767545:R>\n**[Vickypalami](https://twitch.tv/vickypalami)** · ELITECRAFT 4 HOY ME CONVIERTO EN EL CERDO DE NETHERITE Y… · <t:1794774139:R>\n**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 5 · <t:1794776850:R>\n**[EsVandal](https://twitch.tv/esvandal)** · 🛑Elitecraft 4 - Día 3 - Haciendo un agujero en el mismísi… · <t:1794777809:R>",
+  "panel_huella": "En directo ahora · 4**[MerySoldier](https://twitch.tv/mery_soldier)** · ELITECRAFT 4 DÍA 4 !video -NO TENGO TETAS PERO SOY MAJA · <t:1794767545:R>\n**[Vickypalami](https://twitch.tv/vickypalami)** · ELITECRAFT 4 HOY ME CONVIERTO EN EL CERDO DE NETHERITE Y… · <t:1794774139:R>\n**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 5 · <t:1794776850:R>\n**[EsVandal](https://twitch.tv/esvandal)** · 🛑Elitecraft 4 - Día 3 - Haciendo un agujero en el mismísi… · <t:1794777809:R>",
   "todos": "2026-11-15T16:54:23Z"
 }
