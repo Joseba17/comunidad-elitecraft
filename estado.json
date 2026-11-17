@@ -1,15 +1,5 @@
 {
   "directos": {
-    "alkapone": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/6dd5bc1f-b226-494d-a3ff-6bba55f1ab24-profile_image-300x300.png",
-      "inicio": "2026-11-17T00:03:41Z",
-      "juego": "Minecraft",
-      "login": "alkapone",
-      "mensaje": "1572039993235607674",
-      "stream": "319934058071",
-      "titulo": "EliteCraft 4 | Dia de Chambear Full HD"
-    },
     "sramilcar": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
@@ -22,6 +12,6 @@
     }
   },
   "panel": "1572039996771143683",
-  "panel_huella": "En directo ahora · 2**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 5 · <t:1794776850:R>\n**[ALKAPONE](https://twitch.tv/alkapone)** · EliteCraft 4 | Dia de Chambear Full HD · <t:1794873821:R>",
+  "panel_huella": "En directo ahora · 1**[SrAmilcar](https://twitch.tv/sramilcar)** · ELITECRAFT 4/ EXTENSIBLE DIA 5 · <t:1794776850:R>",
   "todos": "2026-11-16T23:16:49Z"
 }
