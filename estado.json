@@ -1,17 +1,6 @@
 {
-  "directos": {
-    "sramilcar": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
-      "inicio": "2026-11-17T21:01:49Z",
-      "juego": "Minecraft",
-      "login": "sramilcar",
-      "mensaje": "1572356284009816098",
-      "stream": "319563072757",
-      "titulo": "MARTES DE ELITECRAFT 4/ EXTENSIBLE DIA 6"
-    }
-  },
+  "directos": {},
   "panel": "1572469356980600953",
-  "panel_huella": "En directo ahora · 1**[SrAmilcar](https://twitch.tv/sramilcar)** · MARTES DE ELITECRAFT 4/ EXTENSIBLE DIA 6 · <t:1794949309:R>",
+  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
   "todos": "2026-11-18T02:20:31Z"
 }
