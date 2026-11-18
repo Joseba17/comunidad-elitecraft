@@ -791,7 +791,17 @@ class Montador:
                      for s in sorted(self.streamers, key=str.casefold)]
         for titulo, clave, texto in deseados:
             if titulo in existentes:
-                self.hilos[clave] = existentes[titulo]
+                tid = self.hilos[clave] = existentes[titulo]
+                # Si ha cambiado (p. ej. su canal de Twitch), se corrige el primer mensaje del hilo.
+                try:
+                    inicio = self.api("GET", f"/channels/{tid}/messages/{tid}") or {}
+                    if inicio.get("content") is not None and inicio.get("content") != texto:
+                        self.api("PATCH", f"/channels/{tid}/messages/{tid}",
+                                 {"content": texto, "flags": 4, "allowed_mentions": {"parse": []}})
+                        print(f"   ~ {titulo}: enlace del hilo actualizado")
+                        continue
+                except ErrorDiscord:
+                    pass
                 igual(titulo)
                 continue
             t = self.api("POST", f"/channels/{foro}/threads", {
