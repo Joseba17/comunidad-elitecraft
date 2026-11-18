@@ -1,7 +1,7 @@
 {
   "directos": {
     "conterstine": {
-      "fallos": 0,
+      "fallos": 1,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/9d8514ff-ddc6-4cf6-af00-a576f8fabb0a-profile_image-300x300.png",
       "inicio": "2026-11-17T16:56:10Z",
       "juego": "Minecraft",
@@ -19,16 +19,6 @@
       "mensaje": "1572436318854717622",
       "stream": "319633486836",
       "titulo": "EliteCraft 4 - hoy si quizas una pranksita y aplano mi base SIN CAM  - !ENEBA !bropack"
-    },
-    "shadoune666": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/c2b4e3fa-f82b-4d1b-9731-1b48c1bc59ec-profile_image-300x300.png",
-      "inicio": "2026-11-17T23:07:21Z",
-      "juego": "Minecraft",
-      "login": "shadoune666",
-      "mensaje": "1572436321413365762",
-      "stream": "321198772700",
-      "titulo": "Treinton jugando Minecraft porque es pobre"
     },
     "sramilcar": {
       "fallos": 0,
@@ -52,6 +42,6 @@
     }
   },
   "panel": "1572436325850943530",
-  "panel_huella": "En directo ahora · 5**[Vickypalami](https://twitch.tv/vickypalami)** · JUGADORA DE ELITECRAFT DEJA SU CASA SIN TERMINAR PARA LIB… · <t:1794934474:R>\n**[Conterstine](https://twitch.tv/conterstine)** · DIA ELITE · <t:1794934570:R>\n**[SrAmilcar](https://twitch.tv/sramilcar)** · MARTES DE ELITECRAFT 4/ EXTENSIBLE DIA 6 · <t:1794949309:R>\n**[Shadoune666](https://twitch.tv/shadoune666)** · Treinton jugando Minecraft porque es pobre · <t:1794956841:R>\n**[CrisGreen](https://twitch.tv/crisgreen)** · EliteCraft 4 - hoy si quizas una pranksita y aplano mi ba… · <t:1794962167:R>",
+  "panel_huella": "En directo ahora · 4**[Vickypalami](https://twitch.tv/vickypalami)** · JUGADORA DE ELITECRAFT DEJA SU CASA SIN TERMINAR PARA LIB… · <t:1794934474:R>\n**[Conterstine](https://twitch.tv/conterstine)** · DIA ELITE · <t:1794934570:R>\n**[SrAmilcar](https://twitch.tv/sramilcar)** · MARTES DE ELITECRAFT 4/ EXTENSIBLE DIA 6 · <t:1794949309:R>\n**[CrisGreen](https://twitch.tv/crisgreen)** · EliteCraft 4 - hoy si quizas una pranksita y aplano mi ba… · <t:1794962167:R>",
   "todos": "2026-11-18T02:20:31Z"
 }
