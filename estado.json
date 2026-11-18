@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1572469356980600953",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
-  "todos": "2026-11-18T02:20:31Z"
+  "directos": {
+    "soyfelipez360": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/soyfelipez360-profile_image-75a6427850e34957-300x300.jpeg",
+      "inicio": "2026-11-18T09:15:36Z",
+      "juego": "Minecraft",
+      "login": "soyfelipez360",
+      "mensaje": "1572561769111490691",
+      "stream": "316239431378",
+      "titulo": "Esto sí es EliteCraft 4 | obligaciones pendientes"
+    }
+  },
+  "panel": "1572561778968231947",
+  "panel_huella": "En directo ahora · 1**[Felipez360](https://twitch.tv/soyfelipez360)** · Esto sí es EliteCraft 4 | obligaciones pendientes · <t:1794993336:R>",
+  "todos": "2026-11-18T10:39:02Z"
 }
