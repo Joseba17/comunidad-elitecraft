@@ -311,11 +311,15 @@ def toca_avisar_a_todos(estado):
     return not ultimo or (time.time() - iso_a_unix(ultimo)) >= HORAS_ENTRE_AVISOS_TODOS * 3600
 
 
+# Enlace fijo al final del panel (web de la comunidad con todos los directos).
+PIE_PANEL = "\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)"
+
+
 def embed_panel(directos, nombres):
     if not directos:
         return {
             "title": "En directo ahora",
-            "description": "Ahora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.",
+            "description": "Ahora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí." + PIE_PANEL,
             "color": GRIS, "footer": {"text": "Se actualiza solo cada pocos minutos"},
         }
     lineas = []
@@ -326,7 +330,7 @@ def embed_panel(directos, nombres):
         lineas.append(f"**[{nombres.get(login, login)}](https://twitch.tv/{login})** · {titulo} · <t:{iso_a_unix(d['inicio'])}:R>")
     return {
         "title": f"En directo ahora · {len(directos)}",
-        "description": "\n".join(lineas)[:4000],
+        "description": "\n".join(lineas)[:3900] + PIE_PANEL,
         "color": MORADO, "footer": {"text": "Se actualiza solo cada pocos minutos"},
     }
 

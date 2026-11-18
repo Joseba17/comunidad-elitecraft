@@ -11,6 +11,6 @@
 -# Los canales de 📌 Inicio y {canal:en-directo} son para leer. En todos los demás puedes escribir.
 
 ## 🔗 Enlaces
-[Cuenta oficial de EliteCraft](https://x.com/EliteCraftSMP) · [Wiki de EliteCraft](https://elitecraft.fandom.com/es/wiki/EliteCraft)
+[Cuenta oficial de EliteCraft](https://x.com/EliteCraftSMP) · [Wiki de EliteCraft](https://elitecraft.fandom.com/es/wiki/EliteCraft) · [EliteCraft 4 Info: directos, vídeos y clips](https://elitecraft-4-info.vercel.app/)
 
 -# ¿Se te ocurre algo para mejorar el servidor? Déjalo en {canal:sugerencias}.
