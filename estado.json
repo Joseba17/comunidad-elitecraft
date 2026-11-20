@@ -1,5 +1,15 @@
 {
   "directos": {
+    "skain": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/e4c31d46-9ee9-4ac6-82af-3b47befb1693-profile_image-300x300.png",
+      "inicio": "2026-11-20T11:11:58Z",
+      "juego": "Just Chatting",
+      "login": "skain",
+      "mensaje": "1573295569739452540",
+      "stream": "318412469220",
+      "titulo": "[324/365]🔴FELIZ VIERNES🔴HABLAMOS Y ELITECRAFT🔴SOY ADICTO AL MINECRAFT🔴"
+    },
     "sramilcar": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
@@ -11,7 +21,7 @@
       "titulo": "JUEVES DE ELITECRAFT 4 DESPUES GTA/ EXTENSIBLE DIA 8"
     }
   },
-  "panel": "1573099496903024763",
-  "panel_huella": "En directo ahora · 1**[SrAmilcar](https://twitch.tv/sramilcar)** · JUEVES DE ELITECRAFT 4 DESPUES GTA/ EXTENSIBLE DIA 8 · <t:1795110175:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
-  "todos": "2026-11-19T18:28:19Z"
+  "panel": "1573295574390808587",
+  "panel_huella": "En directo ahora · 2**[SrAmilcar](https://twitch.tv/sramilcar)** · JUEVES DE ELITECRAFT 4 DESPUES GTA/ EXTENSIBLE DIA 8 · <t:1795110175:R>\n**[Skain](https://twitch.tv/skain)** · [324/365]🔴FELIZ VIERNES🔴HABLAMOS Y ELITECRAFT🔴SOY ADICTO… · <t:1795173118:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "todos": "2026-11-20T11:14:54Z"
 }
