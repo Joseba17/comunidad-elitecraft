@@ -1,5 +1,15 @@
 {
   "directos": {
+    "kaumaru102": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/816f47c2-f4dd-4c92-88d4-63f25c26eb5a-profile_image-300x300.png",
+      "inicio": "2026-11-21T17:08:53Z",
+      "juego": "Minecraft",
+      "login": "kaumaru102",
+      "mensaje": "1573747507765182555",
+      "stream": "318372320994",
+      "titulo": "EliteCraft 4: Save the Server 21/11/26."
+    },
     "marta": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/f60bdabf-b311-4565-95e5-8829e5fba986-profile_image-300x300.png",
@@ -9,16 +19,6 @@
       "mensaje": "1573723396624089280",
       "stream": "318427605987",
       "titulo": "ELITECRAFT 4 #9: necesito más diamantes!!"
-    },
-    "paracetamor": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/7e9a5a98-c17e-4d6b-8034-7a4e0d612721-profile_image-300x300.png",
-      "inicio": "2026-11-21T12:13:30Z",
-      "juego": "Just Chatting",
-      "login": "paracetamor",
-      "mensaje": "1573672909891964999",
-      "stream": "318425888356",
-      "titulo": "Elitecraft 4 low cortisol - tu pov chill de confianza ⭐"
     },
     "soyfelipez360": {
       "fallos": 0,
@@ -41,7 +41,7 @@
       "titulo": "SABADO DE ELITECRAFT 4 HOY JUEGA BOCA DESPUES GTA/ EXTENSIBLE DIA 10"
     }
   },
-  "panel": "1573743470202462291",
-  "panel_huella": "En directo ahora · 4**[Paracetamor](https://twitch.tv/paracetamor)** · Elitecraft 4 low cortisol - tu pov chill de confianza ⭐ · <t:1795263210:R>\n**[SrAmilcar](https://twitch.tv/sramilcar)** · SABADO DE ELITECRAFT 4 HOY JUEGA BOCA DESPUES GTA/ EXTENS… · <t:1795267257:R>\n**[Marta](https://twitch.tv/marta)** · ELITECRAFT 4 #9: necesito más diamantes!! · <t:1795275134:R>\n**[Felipez360](https://twitch.tv/soyfelipez360)** · Esto sí es EliteCraft 4 | más nether en silencio · <t:1795280019:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel": "1573747513305862235",
+  "panel_huella": "En directo ahora · 4**[SrAmilcar](https://twitch.tv/sramilcar)** · SABADO DE ELITECRAFT 4 HOY JUEGA BOCA DESPUES GTA/ EXTENS… · <t:1795267257:R>\n**[Marta](https://twitch.tv/marta)** · ELITECRAFT 4 #9: necesito más diamantes!! · <t:1795275134:R>\n**[Felipez360](https://twitch.tv/soyfelipez360)** · Esto sí es EliteCraft 4 | más nether en silencio · <t:1795280019:R>\n**[Kaumaru](https://twitch.tv/kaumaru102)** · EliteCraft 4: Save the Server 21/11/26. · <t:1795280933:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-21T16:54:39Z"
 }
