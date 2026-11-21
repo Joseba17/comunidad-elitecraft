@@ -1,15 +1,5 @@
 {
   "directos": {
-    "sramilcar": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
-      "inicio": "2026-11-19T17:42:55Z",
-      "juego": "I'm Only Sleeping",
-      "login": "sramilcar",
-      "mensaje": "1573030944275832889",
-      "stream": "319591086069",
-      "titulo": "VIERNES DE ELITECRAFT 4 DESPUES GTA/ EXTENSIBLE DIA 9"
-    },
     "vickypalami": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/fd9bf69a-913f-4040-927e-cbdb21f40bd2-profile_image-300x300.png",
@@ -22,6 +12,6 @@
     }
   },
   "panel": "1573509168713699470",
-  "panel_huella": "En directo ahora · 2**[SrAmilcar](https://twitch.tv/sramilcar)** · VIERNES DE ELITECRAFT 4 DESPUES GTA/ EXTENSIBLE DIA 9 · <t:1795110175:R>\n**[Vickypalami](https://twitch.tv/vickypalami)** · GTA VI | DESVIVIENDO VIEJITAS MIENTRAS INTENTO SER BUEN N… · <t:1795208187:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel_huella": "En directo ahora · 1**[Vickypalami](https://twitch.tv/vickypalami)** · GTA VI | DESVIVIENDO VIEJITAS MIENTRAS INTENTO SER BUEN N… · <t:1795208187:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-21T01:23:39Z"
 }
