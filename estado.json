@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1574003070608613382",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "directos": {
+    "paracetamor": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/7e9a5a98-c17e-4d6b-8034-7a4e0d612721-profile_image-300x300.png",
+      "inicio": "2026-11-22T12:25:34Z",
+      "juego": "Just Chatting",
+      "login": "paracetamor",
+      "mensaje": "1574038395603128395",
+      "stream": "318439985123",
+      "titulo": "Elitecraft 4 low cortisol - tu pov chill de confianza ⭐"
+    }
+  },
+  "panel": "1574038399604629516",
+  "panel_huella": "En directo ahora · 1**[Paracetamor](https://twitch.tv/paracetamor)** · Elitecraft 4 low cortisol - tu pov chill de confianza ⭐ · <t:1795350334:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-22T10:06:13Z"
 }
