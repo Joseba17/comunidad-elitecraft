@@ -1,5 +1,15 @@
 {
   "directos": {
+    "diffrent": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/a3ab2815-5a84-40bf-af77-8b93b32eb486-profile_image-300x300.png",
+      "inicio": "2026-11-23T02:15:56Z",
+      "juego": "Minecraft",
+      "login": "diffrent",
+      "mensaje": "1574247220285280368",
+      "stream": "322379148249",
+      "titulo": "COMENZAMOS EL MEGAPROYECTO (VACIAR EL OCEANO)  ELITECRAFT 4 , VENITE"
+    },
     "marinaifx": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/a08b051b-7807-4d8f-aa72-3088ddae2b82-profile_image-300x300.png",
@@ -30,16 +40,6 @@
       "stream": "319699986036",
       "titulo": "DOMINGO DE ELITECRAFT 4 GANO BOCA DESPUES GTA/ EXTENSIBLE DIA 11"
     },
-    "tvander": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/3fc51e82-f0f2-4d4c-aaad-73dc13157c32-profile_image-300x300.png",
-      "inicio": "2026-11-22T19:51:07Z",
-      "juego": "Minecraft",
-      "login": "tvander",
-      "mensaje": "1574199802458144779",
-      "stream": "318445966563",
-      "titulo": "🤠 ELITECRAFT RESACOSO"
-    },
     "vickypalami": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/fd9bf69a-913f-4040-927e-cbdb21f40bd2-profile_image-300x300.png",
@@ -51,7 +51,7 @@
       "titulo": "ELITECRAFT VENDIENDO SHULKERS Y HACEMOS UNA GRANJA"
     }
   },
-  "panel": "1574212704795623516",
-  "panel_huella": "En directo ahora · 5**[SrAmilcar](https://twitch.tv/sramilcar)** · DOMINGO DE ELITECRAFT 4 GANO BOCA DESPUES GTA/ EXTENSIBLE… · <t:1795371015:R>\n**[Skain](https://twitch.tv/skain)** · [326/365]🟨BAJO CORTISOL STREAM🟨SOLO BUENA VIBRA🟨 · <t:1795374956:R>\n**[MarinaIFX](https://twitch.tv/marinaifx)** · ENTRA EN ESTE DIRECTO SI QUIERES VER EL PEOR POV DE ELITE… · <t:1795375205:R>\n**[Ander](https://twitch.tv/tvander)** · 🤠 ELITECRAFT RESACOSO · <t:1795377067:R>\n**[Vickypalami](https://twitch.tv/vickypalami)** · ELITECRAFT VENDIENDO SHULKERS Y HACEMOS UNA GRANJA · <t:1795380125:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel": "1574247228199927860",
+  "panel_huella": "En directo ahora · 5**[SrAmilcar](https://twitch.tv/sramilcar)** · DOMINGO DE ELITECRAFT 4 GANO BOCA DESPUES GTA/ EXTENSIBLE… · <t:1795371015:R>\n**[Skain](https://twitch.tv/skain)** · [326/365]🟨BAJO CORTISOL STREAM🟨SOLO BUENA VIBRA🟨 · <t:1795374956:R>\n**[MarinaIFX](https://twitch.tv/marinaifx)** · ENTRA EN ESTE DIRECTO SI QUIERES VER EL PEOR POV DE ELITE… · <t:1795375205:R>\n**[Vickypalami](https://twitch.tv/vickypalami)** · ELITECRAFT VENDIENDO SHULKERS Y HACEMOS UNA GRANJA · <t:1795380125:R>\n**[Diffrent](https://twitch.tv/diffrent)** · COMENZAMOS EL MEGAPROYECTO (VACIAR EL OCEANO)  ELITECRAFT… · <t:1795400156:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-22T23:07:59Z"
 }
