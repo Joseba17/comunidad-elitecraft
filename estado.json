@@ -1,6 +1,17 @@
 {
-  "directos": {},
-  "panel": "1574257709635600516",
-  "panel_huella": "En directo ahoraAhora mismo no hay nadie en directo. Cuando empiece alguien, aparecerá aquí.\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
-  "todos": "2026-11-22T23:07:59Z"
+  "directos": {
+    "soyfelipez360": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/soyfelipez360-profile_image-75a6427850e34957-300x300.jpeg",
+      "inicio": "2026-11-23T08:46:51Z",
+      "juego": "Minecraft",
+      "login": "soyfelipez360",
+      "mensaje": "1574345811373072485",
+      "stream": "316257890642",
+      "titulo": "Esto sí es EliteCraft 4 | puedo hablar"
+    }
+  },
+  "panel": "1574345816771137730",
+  "panel_huella": "En directo ahora · 1**[Felipez360](https://twitch.tv/soyfelipez360)** · Esto sí es EliteCraft 4 | puedo hablar · <t:1795423611:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "todos": "2026-11-23T08:48:11Z"
 }
