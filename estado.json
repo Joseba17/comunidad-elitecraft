@@ -1,15 +1,5 @@
 {
   "directos": {
-    "javicubito_": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/af3c4188-32de-4bb6-a331-fd6c5369efb8-profile_image-300x300.png",
-      "inicio": "2026-11-24T03:37:44Z",
-      "juego": "Minecraft",
-      "login": "javicubito_",
-      "mensaje": "1574630167366860872",
-      "stream": "321572526432",
-      "titulo": "🔴 Ep. 7 de EliteCraft 4 - Aqui de chill en ElieCraft"
-    },
     "sramilcar": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/83738992-1ea1-4f40-83d3-4795e2d2ad15-profile_image-300x300.png",
@@ -22,6 +12,6 @@
     }
   },
   "panel": "1574630174081941506",
-  "panel_huella": "En directo ahora · 2**[SrAmilcar](https://twitch.tv/sramilcar)** · LUNES DE ELITECRAFT 4 GANO BOCA DESPUES GTA/ EXTENSIBLE D… · <t:1795455246:R>\n**[JaviCubito](https://twitch.tv/javicubito_)** · 🔴 Ep. 7 de EliteCraft 4 - Aqui de chill en ElieCraft · <t:1795491464:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel_huella": "En directo ahora · 1**[SrAmilcar](https://twitch.tv/sramilcar)** · LUNES DE ELITECRAFT 4 GANO BOCA DESPUES GTA/ EXTENSIBLE D… · <t:1795455246:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-23T22:38:08Z"
 }
