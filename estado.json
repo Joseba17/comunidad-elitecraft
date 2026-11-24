@@ -1,15 +1,5 @@
 {
   "directos": {
-    "soyfelipez360": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/soyfelipez360-profile_image-75a6427850e34957-300x300.jpeg",
-      "inicio": "2026-11-24T07:52:27Z",
-      "juego": "Minecraft",
-      "login": "soyfelipez360",
-      "mensaje": "1574694553418596405",
-      "stream": "316238530257",
-      "titulo": "Esto sí es EliteCraft 4 | momento gold ahora de verdad"
-    },
     "zeling": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/f7491b53-a7fd-4fad-9940-97eaa3d7410f-profile_image-300x300.png",
@@ -22,6 +12,6 @@
     }
   },
   "panel": "1574709816612360265",
-  "panel_huella": "En directo ahora · 2**[Felipez360](https://twitch.tv/soyfelipez360)** · Esto sí es EliteCraft 4 | momento gold ahora de verdad · <t:1795506747:R>\n**[Zeling](https://twitch.tv/zeling)** · 😇PIJAMA + VARIEDAD😇 I DIA DE HACER AMIGOS EN ELITECRAFT 4… · <t:1795510266:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel_huella": "En directo ahora · 1**[Zeling](https://twitch.tv/zeling)** · 😇PIJAMA + VARIEDAD😇 I DIA DE HACER AMIGOS EN ELITECRAFT 4… · <t:1795510266:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-24T06:59:57Z"
 }
