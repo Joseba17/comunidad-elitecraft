@@ -1,15 +1,5 @@
 {
   "directos": {
-    "outconsumer": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/60a420a3-a843-4511-8ace-06b639a5747c-profile_image-300x300.png",
-      "inicio": "2026-11-24T06:56:43Z",
-      "juego": "Minecraft",
-      "login": "outconsumer",
-      "mensaje": "1574680962959282260",
-      "stream": "318460452964",
-      "titulo": "Construimos una granja de cubos de azufre | Elitecraft 4"
-    },
     "soyfelipez360": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/soyfelipez360-profile_image-75a6427850e34957-300x300.jpeg",
@@ -32,6 +22,6 @@
     }
   },
   "panel": "1574709816612360265",
-  "panel_huella": "En directo ahora · 3**[Outconsumer](https://twitch.tv/outconsumer)** · Construimos una granja de cubos de azufre | Elitecraft 4 · <t:1795503403:R>\n**[Felipez360](https://twitch.tv/soyfelipez360)** · Esto sí es EliteCraft 4 | momento gold ahora de verdad · <t:1795506747:R>\n**[Zeling](https://twitch.tv/zeling)** · 😇PIJAMA + VARIEDAD😇 I DIA DE HACER AMIGOS EN ELITECRAFT 4… · <t:1795510266:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel_huella": "En directo ahora · 2**[Felipez360](https://twitch.tv/soyfelipez360)** · Esto sí es EliteCraft 4 | momento gold ahora de verdad · <t:1795506747:R>\n**[Zeling](https://twitch.tv/zeling)** · 😇PIJAMA + VARIEDAD😇 I DIA DE HACER AMIGOS EN ELITECRAFT 4… · <t:1795510266:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-24T06:59:57Z"
 }
