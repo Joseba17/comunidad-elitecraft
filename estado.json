@@ -1,7 +1,7 @@
 {
   "directos": {
     "bobicraftmc": {
-      "fallos": 0,
+      "fallos": 1,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/6bc52440-0515-49e4-931d-97faab9c9336-profile_image-300x300.png",
       "inicio": "2026-11-25T23:02:58Z",
       "juego": "Minecraft",
@@ -19,16 +19,6 @@
       "mensaje": "1575328087388856361",
       "stream": "319738834676",
       "titulo": "ELITECRAFT 4 - UN POCO DE  (ayuda)"
-    },
-    "marinaifx": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/a08b051b-7807-4d8f-aa72-3088ddae2b82-profile_image-300x300.png",
-      "inicio": "2026-11-25T19:45:32Z",
-      "juego": "Just Chatting",
-      "login": "marinaifx",
-      "mensaje": "1575279888246509621",
-      "stream": "318419037282",
-      "titulo": "Elitecraft hasta las 5am🔴!edad🔴el zelda son los amigos que hicimos por el camino🔴best unemployed moments🔴"
     },
     "sramilcar": {
       "fallos": 0,
@@ -52,6 +42,6 @@
     }
   },
   "panel": "1575328089745924128",
-  "panel_huella": "En directo ahora · 5**[SrAmilcar](https://twitch.tv/sramilcar)** · YA PAREN CON MI SUFRIMIENTO EXTENSIBLE DIA 13 · <t:1795631134:R>\n**[MarinaIFX](https://twitch.tv/marinaifx)** · Elitecraft hasta las 5am🔴!edad🔴el zelda son los amigos qu… · <t:1795635932:R>\n**[Ander](https://twitch.tv/tvander)** · 🤠 HE VOTADO, HAGO WATERDROPS, ME ROBA PEDRO SANCHEZ? · <t:1795646713:R>\n**[Bobicraft](https://twitch.tv/bobicraftmc)** · 🔴EliteCraft 4 - TORRE TERMINADA!!!!! · <t:1795647778:R>\n**[Farfadox](https://twitch.tv/farfadoxvevo)** · ELITECRAFT 4 - UN POCO DE  (ayuda) · <t:1795657743:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel_huella": "En directo ahora · 4**[SrAmilcar](https://twitch.tv/sramilcar)** · YA PAREN CON MI SUFRIMIENTO EXTENSIBLE DIA 13 · <t:1795631134:R>\n**[Ander](https://twitch.tv/tvander)** · 🤠 HE VOTADO, HAGO WATERDROPS, ME ROBA PEDRO SANCHEZ? · <t:1795646713:R>\n**[Bobicraft](https://twitch.tv/bobicraftmc)** · 🔴EliteCraft 4 - TORRE TERMINADA!!!!! · <t:1795647778:R>\n**[Farfadox](https://twitch.tv/farfadoxvevo)** · ELITECRAFT 4 - UN POCO DE  (ayuda) · <t:1795657743:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-25T22:39:52Z"
 }
