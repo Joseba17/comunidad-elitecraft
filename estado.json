@@ -1,15 +1,5 @@
 {
   "directos": {
-    "bobicraftmc": {
-      "fallos": 1,
-      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/6bc52440-0515-49e4-931d-97faab9c9336-profile_image-300x300.png",
-      "inicio": "2026-11-25T23:02:58Z",
-      "juego": "Minecraft",
-      "login": "bobicraftmc",
-      "mensaje": "1575286308299874426",
-      "stream": "322470442330",
-      "titulo": "🔴EliteCraft 4 - TORRE TERMINADA!!!!!"
-    },
     "farfadoxvevo": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/6782857f-590f-45ff-9aa5-959b0bff38ea-profile_image-300x300.png",
@@ -31,7 +21,7 @@
       "titulo": "YA PAREN CON MI SUFRIMIENTO EXTENSIBLE DIA 13"
     },
     "tvander": {
-      "fallos": 0,
+      "fallos": 1,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/3fc51e82-f0f2-4d4c-aaad-73dc13157c32-profile_image-300x300.png",
       "inicio": "2026-11-25T22:45:13Z",
       "juego": "Minecraft",
@@ -42,6 +32,6 @@
     }
   },
   "panel": "1575328089745924128",
-  "panel_huella": "En directo ahora · 4**[SrAmilcar](https://twitch.tv/sramilcar)** · YA PAREN CON MI SUFRIMIENTO EXTENSIBLE DIA 13 · <t:1795631134:R>\n**[Ander](https://twitch.tv/tvander)** · 🤠 HE VOTADO, HAGO WATERDROPS, ME ROBA PEDRO SANCHEZ? · <t:1795646713:R>\n**[Bobicraft](https://twitch.tv/bobicraftmc)** · 🔴EliteCraft 4 - TORRE TERMINADA!!!!! · <t:1795647778:R>\n**[Farfadox](https://twitch.tv/farfadoxvevo)** · ELITECRAFT 4 - UN POCO DE  (ayuda) · <t:1795657743:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "panel_huella": "En directo ahora · 3**[SrAmilcar](https://twitch.tv/sramilcar)** · YA PAREN CON MI SUFRIMIENTO EXTENSIBLE DIA 13 · <t:1795631134:R>\n**[Ander](https://twitch.tv/tvander)** · 🤠 HE VOTADO, HAGO WATERDROPS, ME ROBA PEDRO SANCHEZ? · <t:1795646713:R>\n**[Farfadox](https://twitch.tv/farfadoxvevo)** · ELITECRAFT 4 - UN POCO DE  (ayuda) · <t:1795657743:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
   "todos": "2026-11-25T22:39:52Z"
 }
