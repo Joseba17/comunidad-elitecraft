@@ -1,5 +1,15 @@
 {
   "directos": {
+    "marta": {
+      "fallos": 0,
+      "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/f60bdabf-b311-4565-95e5-8829e5fba986-profile_image-300x300.png",
+      "inicio": "2026-11-27T15:28:49Z",
+      "juego": "Minecraft",
+      "login": "marta",
+      "mensaje": "1575896579502637151",
+      "stream": "318435659746",
+      "titulo": "ELITECRAFT 4 #14: granjita de musgo!"
+    },
     "mrcarlosn00b": {
       "fallos": 0,
       "foto": "https://static-cdn.jtvnw.net/jtv_user_pictures/9aa7dd44-73f8-4559-aa57-b53f49c6d3d4-profile_image-300x300.png",
@@ -31,7 +41,7 @@
       "titulo": "Elitecraft4 | Día #16"
     }
   },
-  "panel": "1575890179028418571",
-  "panel_huella": "En directo ahora · 3**[xTheFocuSx](https://twitch.tv/xxxthefocusxxx)** · Elitecraft4 | Día #16 · <t:1795784508:R>\n**[Perxitaa](https://twitch.tv/perxitaa)** · [!DROPS ON] EL FINAL de GTA VI #8 y luego un rato de elit… · <t:1795789401:R>\n**[MrCarlosnoob](https://twitch.tv/mrcarlosn00b)** · EliteCraft 4: MUCHO MINECRAFT TECNICO, GRANJAS, RISAS, BR… · <t:1795791701:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
-  "todos": "2026-11-27T09:07:31Z"
+  "panel": "1575896583776763935",
+  "panel_huella": "En directo ahora · 4**[xTheFocuSx](https://twitch.tv/xxxthefocusxxx)** · Elitecraft4 | Día #16 · <t:1795784508:R>\n**[Perxitaa](https://twitch.tv/perxitaa)** · [!DROPS ON] EL FINAL de GTA VI #8 y luego un rato de elit… · <t:1795789401:R>\n**[MrCarlosnoob](https://twitch.tv/mrcarlosn00b)** · EliteCraft 4: MUCHO MINECRAFT TECNICO, GRANJAS, RISAS, BR… · <t:1795791701:R>\n**[Marta](https://twitch.tv/marta)** · ELITECRAFT 4 #14: granjita de musgo! · <t:1795793329:R>\n\n🌐 ¿Quieres verlos todos a la vez? Entra en [EliteCraft 4 Info](https://elitecraft-4-info.vercel.app/)",
+  "todos": "2026-11-27T15:30:23Z"
 }
